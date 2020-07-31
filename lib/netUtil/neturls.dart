@@ -7,11 +7,9 @@ class NetUrls {
 
 //用户登录验证码
   static String get_loginverify_code = baseUrl + "common/get_loginverify_code";
+
 //用户忘记密码验证码
   static String get_lossverify_code = baseUrl + "common/get_lossverify_code";
-
-
-
 
 //注册新手机号
   static String register = baseUrl + "common/register";
@@ -25,4 +23,6 @@ class NetUrls {
   // 忘记密码 修改密码
   static String lostpasswd = baseUrl + "common/lostpasswd";
 
+// 获取分类商品列表 home
+  static String goods_list = baseUrl + "news/goods_list";
 }

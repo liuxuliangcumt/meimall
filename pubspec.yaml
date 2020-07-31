@@ -89,9 +89,18 @@ flutter:
    - assets/images/me_store.png
    - assets/images/me_vip.png
    - assets/images/me_zone.png
-   - assets/images/me_message.png  #qrcode
+   - assets/images/me_message.png
    - assets/images/qrcode.png
    - assets/images/login_code.png
+   - assets/images/c_chat.png
+   - assets/images/c_friend.png
+   - assets/images/c_circle.png
+   - assets/images/c_qchat.png
+   - assets/images/good.png
+   - assets/images/s_market.png
+   - assets/images/s_note.png
+   - assets/images/s_specialoffer.png
+   - assets/images/s_takeout.png
 
   #   - images/a_dot_ham.jpeg
 
