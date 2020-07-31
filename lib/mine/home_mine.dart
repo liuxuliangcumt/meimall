@@ -1,14 +1,31 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/loginandregister/login.dart';
-import 'package:meimall/loginandregister/register.dart';
+import 'package:oktoast/oktoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert' as convert;
 
 class HomeMine extends StatefulWidget {
   @override
   _HomeMineState createState() => _HomeMineState();
 }
 
-class _HomeMineState extends State<HomeMine> {
+class _HomeMineState extends State<HomeMine>
+    with AutomaticKeepAliveClientMixin {
+  @protected
+  bool get wantKeepAlive => true;
+  String accountNumber = "";
+  String nickName = "未登录，点击头像登录";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getPSuserInfo();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +44,7 @@ class _HomeMineState extends State<HomeMine> {
                 ],
               ),
               padding:
-              EdgeInsets.only(left: 22, right: 22, top: 40, bottom: 20),
+                  EdgeInsets.only(left: 22, right: 22, top: 40, bottom: 20),
             ),
             info(),
             funcs(),
@@ -40,23 +57,51 @@ class _HomeMineState extends State<HomeMine> {
 
 //个人登录 信息
   Widget info() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        InkWell(
-          child: Image.asset("assets/images/unlogin.png"
-              ""),
-          onTap: () {
-            // todo   去登陆
-            toLoginPage();
-          },
-        ),
-        SizedBox(
-          width: 15,
-        ),
-        Text("未登录，点击头像登录")
-      ],
+    return Container(
+      padding: EdgeInsets.only(right: 22, left: 22),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          InkWell(
+            child: Image.asset("assets/images/unlogin.png"
+                ""),
+            onTap: () {
+              // todo   去登陆
+              if (accountNumber.length == 0) {
+                toLoginPage();
+              }
+            },
+          ),
+          SizedBox(
+            width: 13,
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  nickName,
+                  style: TextStyle(fontSize: 18),
+                ),
+                SizedBox(height: 13),
+                Text(accountNumber.length == 0 ? "" : "账号：$accountNumber",
+                    style: TextStyle(fontSize: 13.5, color: Color(0xff777777))),
+                SizedBox(height: 15)
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 15),
+            child: Image.asset("assets/images/qrcode.png", width: 15),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 15),
+            child: Icon(Icons.arrow_forward_ios, size: 15, color: Colors.grey),
+          ),
+        ],
+      ),
     );
   }
 
@@ -136,7 +181,11 @@ class _HomeMineState extends State<HomeMine> {
           )),
       onTap: () {
         print("dianjiel");
-        d.call();
+        if (accountNumber.length == 0) {
+          showToast("请先登录");
+        } else {
+          d.call();
+        }
       },
     );
   }
@@ -144,9 +193,23 @@ class _HomeMineState extends State<HomeMine> {
   void toLoginPage() async {
     final result = await Navigator.push(
         context, MaterialPageRoute(builder: (context) => Login()));
+    if (result == null) return;
     Map<String, dynamic> loginResult = result;
-    loginResult.forEach((key, value) {
-      print("登录结果： key: $key  value：$value");
+    setState(() {
+      nickName = loginResult["user"]["nickname"];
+      accountNumber = loginResult["user"]["username"];
+    });
+  }
+
+  void getPSuserInfo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    // prefs.setString("login", data.toString());
+    final res = prefs.get("login");
+    if (res == null) return;
+    Map<String, dynamic> loginResult = convert.jsonDecode(res);
+    setState(() {
+      nickName = loginResult["user"]["nickname"];
+      accountNumber = loginResult["user"]["username"];
     });
   }
 }

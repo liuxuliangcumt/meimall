@@ -89,8 +89,9 @@ flutter:
    - assets/images/me_store.png
    - assets/images/me_vip.png
    - assets/images/me_zone.png
-   - assets/images/me_message.png
-
+   - assets/images/me_message.png  #qrcode
+   - assets/images/qrcode.png
+   - assets/images/login_code.png
 
   #   - images/a_dot_ham.jpeg
 

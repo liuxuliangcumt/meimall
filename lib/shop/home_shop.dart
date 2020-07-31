@@ -5,7 +5,11 @@ class HomeShop extends StatefulWidget {
   _HomeShopState createState() => _HomeShopState();
 }
 
-class _HomeShopState extends State<HomeShop> {
+class _HomeShopState extends State<HomeShop>
+    with AutomaticKeepAliveClientMixin {
+  @protected
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
     return Container();

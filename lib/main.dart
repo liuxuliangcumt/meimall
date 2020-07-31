@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor:ThemeColors.colorTheme,
+        primaryColor: ThemeColors.colorTheme,
         appBarTheme: AppBarTheme(
             color: Colors.white,
             elevation: 0.5,
@@ -54,17 +54,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int currentIndex = 0;
 
+  PageController _controller;
+
   @override
   void initState() {
     // TODO: implement initState
-    getLocation();
     super.initState();
+    getLocation();
+    _controller = PageController(initialPage: 0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: _buildBodyWidget(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
@@ -75,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: currentIndex,
         unselectedItemColor: Colors.black,
         onTap: (index) {
-          _changePage(index);
+          _controller.jumpToPage(index);
         },
       ),
     );
@@ -204,5 +207,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
     _locationData = await location.getLocation();
     print(_locationData.toString());
+  }
+
+  Widget _buildBodyWidget() {
+    return PageView.builder(
+      controller: _controller,
+      itemCount: pages.length,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        return pages[index];
+      },
+      onPageChanged: (index) {
+        if (index != _controller) {
+          setState(() {
+            currentIndex = index;
+          });
+        }
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 }

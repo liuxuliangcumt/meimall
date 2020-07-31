@@ -1,19 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:flutter_verification_box/verification_box.dart';
 import 'package:meimall/netUtil/NetUtil.dart';
 import 'package:meimall/netUtil/neturls.dart';
-import 'package:oktoast/oktoast.dart';
 
-class Register extends StatefulWidget {
+// 修改密码
+class ModifyPassword extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _ModifyPasswordState createState() => _ModifyPasswordState();
 }
 
-class _RegisterState extends State<Register> {
-  String phone = "";
+class _ModifyPasswordState extends State<ModifyPassword> {
   TextEditingController controller = TextEditingController();
+  String phone = "";
   bool isSendCode = false;
   int countdown = 0;
   String code = "";
@@ -26,13 +27,6 @@ class _RegisterState extends State<Register> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {
-            if (isSendCode) {
-              setState(() {
-                code = "";
-                isSendCode = false;
-              });
-              return;
-            }
             Navigator.pop(context);
           },
         ),
@@ -49,7 +43,7 @@ class _RegisterState extends State<Register> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("注册账号",
+          Text("忘记密码",
               style: TextStyle(fontSize: 28.5, color: Color(0xff2f2f2f))),
           SizedBox(height: 50),
           TextField(
@@ -157,7 +151,12 @@ class _RegisterState extends State<Register> {
                         showToast("请输入验证码");
                         return;
                       }
-                      registerAccount();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ModifyComplete(phone, code)));
+                      //     registerAccount();
                     },
                     height: 50,
                     shape: StadiumBorder(),
@@ -176,7 +175,7 @@ class _RegisterState extends State<Register> {
   }
 
   void sendCode() {
-    NetUtil.post(NetUrls.get_registerverify_code, {"mobile": phone}, (result) {
+    NetUtil.post(NetUrls.get_lossverify_code, {"mobile": phone}, (result) {
       //    {"code":8460,"msg":"短信发送成功"}
       String resMsg = result.data["msg"];
       if (resMsg.endsWith("短信发送成功")) {
@@ -227,6 +226,108 @@ class _RegisterState extends State<Register> {
         {"login_id": phone, "pass1": "123456", "mobile_code": code}, (result) {
 //  {"user":{"login_id":"17310373503","mobile_code":"1491","login_pass":"e10adc3949ba59abbe56e057f20f883e","platform":"app","meicheng_sess_uid":1733,"meicheng_sess_id":"17310373503","nick":"17310373503","user_id":1733,"username":"17310373503","nickname":"17310373503","chatSessionId":"","meicheng_is_admin":0},"token":{"client_id":1733,"group_id":1,"username":"17310373503","rank_list":"board","corp_id":1,"client_type":1,"platform":"app","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkiLCJhdWQiOjE3MzMsImRhdGEiOnsiYSI6MTczMywidCI6MSwiZyI6MSwidSI6IjE3MzEwMzczNTAzIiwiciI6ImJvYXJkIn0sImV4cCI6MTU5NjAwNTA4Mywic2NvcGUiOiJhY2Nlc3MiLCJqdGkiOiI1ZjIwZmViYjE2YmU5In0.Jq1SjKzJ8qIu5xno_bajTViULZ5ySp7ZJX81KEfGR78","token_expires":1597293883,"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkiLCJhdWQiOjE3MzMsImRhdGEiOnsiYSI6MTczMywidCI6MSwiZyI6MSwidSI6IjE3MzEwMzczNTAzIiwiciI6ImJvYXJkIn0sImV4cCI6MTU5NzI5Mzg4Mywic2NvcGUiOiJyZWZyZXNoIiwian
       showToast("注册成功，账户为手机号，密码：123456", duration: Duration(seconds: 5));
+      Navigator.pop(context);
+    }, (error) {
+      showToast("请求错误");
+    });
+  }
+}
+
+class ModifyComplete extends StatefulWidget {
+  String phone;
+  String code = "";
+
+  ModifyComplete(this.phone, this.code);
+
+  @override
+  _ModifyCompleteState createState() => _ModifyCompleteState(phone, code);
+}
+
+class _ModifyCompleteState extends State<ModifyComplete> {
+  _ModifyCompleteState(this.phone, this.code);
+
+  TextEditingController controller = TextEditingController();
+  String phone = "";
+  String code = "";
+  String pwd = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: beforSendCode(),
+      ),
+    );
+  }
+
+  Widget beforSendCode() {
+    return Container(
+      padding: EdgeInsets.only(left: 22.5, right: 22.5, top: 60),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("请填写登录密码",
+              style: TextStyle(fontSize: 28.5, color: Color(0xff2f2f2f))),
+          SizedBox(height: 50),
+          TextField(
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: "请输入登录密码",
+            ),
+            keyboardType: TextInputType.text,
+            style: TextStyle(fontSize: 15),
+          ),
+          SizedBox(height: 18),
+          Text('请填写6-20位数字及密码组合',
+              style: TextStyle(fontSize: 10, color: Colors.grey)),
+          SizedBox(height: 50),
+          Row(
+            children: [
+              Expanded(
+                child: MaterialButton(
+                    onPressed: () {
+                      pwd = controller.text.toString();
+                      if (pwd.length < 6) {
+                        showToast("请填写6-20位数字及密码组合");
+                        return;
+                      }
+                      modifyPwd();
+                    },
+                    height: 50,
+                    shape: StadiumBorder(),
+                    textColor: Colors.white,
+                    color: Color(0xffC3AB87),
+                    child: Text(
+                      "完成",
+                      style: TextStyle(fontSize: 20),
+                    )),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  void modifyPwd() {
+    NetUtil.post(NetUrls.lostpasswd, {
+      "login_id": phone,
+      "pass1": pwd,
+      "pass2": pwd,
+      "mobile_code": code
+    }, (result) {
+//  {"user":{"login_id":"17310373503","mobile_code":"1491","login_pass":"e10adc3949ba59abbe56e057f20f883e","platform":"app","meicheng_sess_uid":1733,"meicheng_sess_id":"17310373503","nick":"17310373503","user_id":1733,"username":"17310373503","nickname":"17310373503","chatSessionId":"","meicheng_is_admin":0},"token":{"client_id":1733,"group_id":1,"username":"17310373503","rank_list":"board","corp_id":1,"client_type":1,"platform":"app","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkiLCJhdWQiOjE3MzMsImRhdGEiOnsiYSI6MTczMywidCI6MSwiZyI6MSwidSI6IjE3MzEwMzczNTAzIiwiciI6ImJvYXJkIn0sImV4cCI6MTU5NjAwNTA4Mywic2NvcGUiOiJhY2Nlc3MiLCJqdGkiOiI1ZjIwZmViYjE2YmU5In0.Jq1SjKzJ8qIu5xno_bajTViULZ5ySp7ZJX81KEfGR78","token_expires":1597293883,"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkiLCJhdWQiOjE3MzMsImRhdGEiOnsiYSI6MTczMywidCI6MSwiZyI6MSwidSI6IjE3MzEwMzczNTAzIiwiciI6ImJvYXJkIn0sImV4cCI6MTU5NzI5Mzg4Mywic2NvcGUiOiJyZWZyZXNoIiwian
+      showToast("修改成功", duration: Duration(seconds: 5));
+      Navigator.pop(context);
       Navigator.pop(context);
     }, (error) {
       showToast("请求错误");

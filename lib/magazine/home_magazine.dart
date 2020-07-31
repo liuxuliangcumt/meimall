@@ -13,7 +13,10 @@ class HomeMagazine extends StatefulWidget {
   HomeMagazineState createState() => HomeMagazineState();
 }
 
-class HomeMagazineState extends State<HomeMagazine> {
+class HomeMagazineState extends State<HomeMagazine>
+    with AutomaticKeepAliveClientMixin {
+  @protected
+  bool get wantKeepAlive => true;
   String address = "苏州·高新区";
   List swiperDataList = <MyBanner>[];
   List newBeans = <NewBean>[];
@@ -51,11 +54,14 @@ class HomeMagazineState extends State<HomeMagazine> {
             ),
             addressAndSearch(), //位置 搜索 扫码
             fivePoint(),
-            Container(child: firstBanner(swiperDataList),
+            Container(
+                child: firstBanner(swiperDataList),
                 margin: EdgeInsets.only(top: 26, bottom: 25)),
-            Text("发现美好生活", style: TextStyle(fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold)),
+            Text("发现美好生活",
+                style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold)),
             SizedBox(height: 8),
             Text("Discover a good life",
                 style: TextStyle(fontSize: 10, color: Color(0xff777777))),
@@ -159,7 +165,7 @@ class HomeMagazineState extends State<HomeMagazine> {
                   fit: BoxFit.cover,
                   imageUrl: "${swiperDataList[i].img}",
                   placeholder: (context, url) =>
-                  new CircularProgressIndicator(),
+                      new CircularProgressIndicator(),
                   errorWidget: (context, url, error) => new Icon(Icons.error),
                 );
               } else {
@@ -170,10 +176,7 @@ class HomeMagazineState extends State<HomeMagazine> {
             itemCount: swiperDataList == null ? 0 : swiperDataList.length,
           ),
           constraints: new BoxConstraints.loose(
-              new Size(MediaQuery
-                  .of(context)
-                  .size
-                  .width, 320.0)),
+              new Size(MediaQuery.of(context).size.width, 320.0)),
         ));
   }
 
@@ -198,27 +201,34 @@ class HomeMagazineState extends State<HomeMagazine> {
       child: Column(
         children: [
           Container(
-            child: InkWell(child: Row(
-              children: [
-                Expanded(
-                    child:
-                    Text(bean.board_title, style: TextStyle(
-                        fontSize: 21, fontWeight: FontWeight.bold),)),
-                Icon(
-                  Icons.arrow_forward_ios, color: Color(0xff777777), size: 15,)
-              ],
-            ),onTap: (){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Magazine()));
-            },),
+            child: InkWell(
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Text(
+                    bean.board_title,
+                    style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                  )),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xff777777),
+                    size: 15,
+                  )
+                ],
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Magazine()));
+              },
+            ),
             padding:
-            EdgeInsets.only(top: 20, right: 22.5, left: 22.5, bottom: 20),
+                EdgeInsets.only(top: 20, right: 22.5, left: 22.5, bottom: 20),
           ),
           bean.ad_app == null
               ? Container()
               : Container(
-              child: firstBanner(bean.ad_app),
-              margin: EdgeInsets.only(bottom: 15)),
+                  child: firstBanner(bean.ad_app),
+                  margin: EdgeInsets.only(bottom: 15)),
           horizontalScrolList(bean.list),
         ],
       ),
@@ -288,15 +298,15 @@ class HomeMagazineState extends State<HomeMagazine> {
 
   void getNewsList() {
     NetUtil.post("http://www.bjxmqy.com:9501/index/newslist", {"city": "成都市"},
-            (result) {
-          HomeNews homeNewBeans = HomeNews.fromJson(result.data);
-          setState(() {
-            newBeans = homeNewBeans.newBeans;
-          });
-        }, (error) {
-          print("出错了");
-          print(error);
-        });
+        (result) {
+      HomeNews homeNewBeans = HomeNews.fromJson(result.data);
+      setState(() {
+        newBeans = homeNewBeans.newBeans;
+      });
+    }, (error) {
+      print("出错了");
+      print(error);
+    });
   }
 
 //显示城市选择
@@ -306,10 +316,10 @@ class HomeMagazineState extends State<HomeMagazine> {
     );
     print(result.toString());
     setState(() {
-      address=result.cityName+"·"+result.areaName;
+      address = result.cityName + "·" + result.areaName;
     });
     // type 2
-  /*  Result result2 = await CityPickers.showFullPageCityPicker(
+    /*  Result result2 = await CityPickers.showFullPageCityPicker(
       context: context,
     );*/
   }
