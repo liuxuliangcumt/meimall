@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
+import 'neturls.dart';
 import 'ox_log.dart';
 
 class NetUtil {

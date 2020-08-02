@@ -100,6 +100,11 @@ flutter:
    - assets/images/s_market.png
    - assets/images/s_note.png
    - assets/images/s_specialoffer.png
+   - assets/images/f_call.png
+   - assets/images/f_car.png
+   - assets/images/f_charge.png
+   - assets/images/f_deliver.png
+   - assets/images/f_recycle.png
    - assets/images/s_takeout.png
 
   #   - images/a_dot_ham.jpeg

@@ -42,7 +42,8 @@ class _HomeShopState extends State<HomeShop>
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(child: Text('商店', style: TextStyle(fontSize: 27)))
+                  Expanded(child: Text('商店', style: TextStyle(fontSize: 27))),
+                  Icon(Icons.shopping_cart,color: Colors.grey,)
                 ],
               ),
               margin: EdgeInsets.only(left: 22.5, right: 22.5),
@@ -201,26 +202,112 @@ class _HomeShopState extends State<HomeShop>
       child: ListView.builder(
         itemBuilder: listViewItem,
         physics: new NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        //马勒戈壁的非常重要
+        shrinkWrap: true, //马勒戈壁的非常重要
         itemCount: homeShopBeans.length,
       ),
     );
   }
 
-  Widget listViewItem(BuildContext context, int index) {}
+  Widget listViewItem(BuildContext context, int index) {
+    HomeShopBean bean = homeShopBeans[index];
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: InkWell(
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Text(
+                    bean.category_name,
+                    style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                  )),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xff777777),
+                    size: 15,
+                  )
+                ],
+              ),
+              onTap: () {},
+            ),
+            padding: EdgeInsets.only(top: 20, bottom: 20),
+          ),
+          gridView(bean)
+        ],
+      ),
+      padding: EdgeInsets.only(right: 22.5, left: 22.5),
+    );
+  }
 
   void getShopData() {
     NetUtil.post(NetUrls.goods_list, {"city": "重庆"}, (result) {
       Map<String, dynamic> maps = result.data["goodsCat"];
+      List shops = <dynamic>[];
 
       maps.forEach((key, value) {
-        homeShopBeans.add(value);
+        shops.add(value);
       });
-      
+      setState(() {
+        homeShopBeans = shops.map((i) => HomeShopBean.fromJson(i)).toList();
+      });
     }, (error) {
       print("出错了");
       print(error);
     });
   }
+}
+
+Widget gridView(HomeShopBean bean) {
+  return Container(
+    child: GridView.builder(
+      shrinkWrap: true,
+      physics: new NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        //横轴元素个数
+        crossAxisCount: 2,
+        //横轴间距
+        crossAxisSpacing: 10.0,
+          childAspectRatio:0.6
+      ),
+      itemBuilder: (BuildContext context, int index) =>
+          gridViewItem(context, index, bean.list),
+      itemCount: bean.list.length,
+    ),
+  );
+}
+
+Widget gridViewItem(BuildContext context, int index, List<ShopList> list) {
+  ShopList bean = list[index];
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        CachedNetworkImage(
+          imageUrl:  bean.goods_file1 ,
+          fit: BoxFit.cover,
+          errorWidget: (context, url, error) => new Icon(Icons.error),
+        ),
+        SizedBox(height: 14),
+        Text(
+          bean.shop,
+          style: TextStyle(fontSize: 10, color: Colors.grey),
+        ),
+        SizedBox(height: 10),
+        Text(
+          bean.goods_name,
+          style: TextStyle(
+            fontSize: 13.5,
+          ),
+          maxLines: 1,
+        ),
+        SizedBox(height: 17),
+        Text(
+          "￥${bean.goods_sale_price}",
+          style: TextStyle(color: Color(0xffC6B08E), fontSize: 13.5),
+        ),
+
+      ],
+    ),
+  );
 }

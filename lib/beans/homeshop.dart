@@ -13,7 +13,7 @@ class HomeShopBean {
 
     if (json['list'] != null) {
       list = new List<ShopList>();
-      json['ad_app'].forEach((i) {
+      json['list'].forEach((i) {
         list.add(new ShopList.fromJson(i));
       });
     }
