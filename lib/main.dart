@@ -5,12 +5,15 @@ import 'package:meimall/mine/home_mine.dart';
 import 'package:meimall/serve/home_serve.dart';
 import 'package:meimall/shop/home_shop.dart';
 import 'package:meimall/src/colors/themecolors.dart';
+import 'package:meimall/test/test.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'magazine/home_magazine.dart';
 
 void main() {
   runApp(MyApp());
+  // runApp(FadeAppTest());
+
 }
 
 class MyApp extends StatelessWidget {

@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:meimall/beans/banners.dart';
 import 'package:meimall/beans/homenews.dart';
+import 'package:meimall/loginandregister/modifypassword.dart';
 import 'package:meimall/magazine/magezine.dart';
 import 'package:meimall/netUtil/NetUtil.dart';
+
+import 'follow.dart';
 
 class HomeMagazine extends StatefulWidget {
   @override
@@ -114,7 +117,11 @@ class HomeMagazineState extends State<HomeMagazine>
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+
+             Navigator.push(
+                  context, MaterialPageRoute(builder: (content) => Follow()));
+            },
             child: fivePointItem("assets/images/look.png", "关注"),
           ),
           InkWell(
