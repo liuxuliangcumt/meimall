@@ -294,7 +294,8 @@ class _HomeServeState extends State<HomeServe>
                 )
               ],
             ),
-          ), Container(
+          ),
+          Container(
             margin: EdgeInsets.only(top: 20),
             child: Row(
               children: <Widget>[

@@ -9,6 +9,7 @@ import 'package:meimall/loginandregister/modifypassword.dart';
 import 'package:meimall/magazine/magezine.dart';
 import 'package:meimall/netUtil/NetUtil.dart';
 
+import 'behaviour.dart';
 import 'follow.dart';
 
 class HomeMagazine extends StatefulWidget {
@@ -118,14 +119,16 @@ class HomeMagazineState extends State<HomeMagazine>
         children: [
           InkWell(
             onTap: () {
-
-             Navigator.push(
+              Navigator.push(
                   context, MaterialPageRoute(builder: (content) => Follow()));
             },
             child: fivePointItem("assets/images/look.png", "关注"),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => Behaviour()));
+            },
             child: fivePointItem("assets/images/action.png", "动态"),
           ),
           InkWell(

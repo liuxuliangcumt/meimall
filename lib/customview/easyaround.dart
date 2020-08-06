@@ -8,9 +8,10 @@ class EasyAround extends StatelessWidget {
   Widget bottom;
   Widget child;
   EdgeInsetsGeometry padding;
-  MainAxisAlignment mainAxisAlignment;
-
-  CrossAxisAlignment crossAxisAlignment;
+  MainAxisAlignment rowMainAxisAlignment;
+  CrossAxisAlignment rowCrossAxisAlignment;
+  CrossAxisAlignment columnCrossAxisAlignment;
+  MainAxisAlignment columnMainAxisAlignment;
 
   EasyAround(
       {this.top,
@@ -18,8 +19,10 @@ class EasyAround extends StatelessWidget {
       this.left,
       this.right,
       this.bottom,
-      this.crossAxisAlignment = CrossAxisAlignment.center,
-      this.mainAxisAlignment = MainAxisAlignment.center,
+      this.rowCrossAxisAlignment = CrossAxisAlignment.center,
+      this.rowMainAxisAlignment = MainAxisAlignment.center,
+      this.columnCrossAxisAlignment = CrossAxisAlignment.center,
+      this.columnMainAxisAlignment = MainAxisAlignment.center,
       @required this.child});
 
   @override
@@ -28,13 +31,13 @@ class EasyAround extends StatelessWidget {
 
     return Container(
       child: Column(
-        mainAxisAlignment: mainAxisAlignment,
-        crossAxisAlignment: crossAxisAlignment,
+        mainAxisAlignment: columnMainAxisAlignment,
+        crossAxisAlignment: columnCrossAxisAlignment,
         children: [
           top == null ? Container(height: 0) : top,
           Row(
-            mainAxisAlignment: mainAxisAlignment,
-            crossAxisAlignment: crossAxisAlignment,
+            mainAxisAlignment: rowMainAxisAlignment,
+            crossAxisAlignment: rowCrossAxisAlignment,
             children: [
               left == null ? Container(width: 0) : left,
               getChild(),

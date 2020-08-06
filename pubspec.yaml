@@ -106,6 +106,12 @@ flutter:
    - assets/images/f_deliver.png
    - assets/images/f_recycle.png
    - assets/images/s_takeout.png
+   - assets/images/share.png
+   - assets/images/popu_article.png
+   - assets/images/popu_ask.png
+   - assets/images/popu_fly.png
+   - assets/images/popu_live.png
+   - assets/images/popu_video.png
 
   #   - images/a_dot_ham.jpeg
 
