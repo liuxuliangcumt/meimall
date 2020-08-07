@@ -57,61 +57,62 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/images/zazhi.png
-   - assets/images/zazhi_u.png
-   - assets/images/shequ.png
-   - assets/images/shequ_u.png
-   - assets/images/shangdian.png
-   - assets/images/wode.png
-   - assets/images/wode_u.png
-   - assets/images/fuwu_u.png
-   - assets/images/fuwu.png
-   - assets/images/shangdian_u.png
-   - assets/images/logo_img.png
-   - assets/images/home_magazine_top.png
-   - assets/images/search.png
-   - assets/images/scan.png
-   - assets/images/video.png
-   - assets/images/question.png
-   - assets/images/broadcast.png
-   - assets/images/look.png
-   - assets/images/action.png
-   - assets/images/camera.png
-   - assets/images/unlogin.png
-   - assets/images/me_pay.png
-   - assets/images/me_payed.png
-   - assets/images/me_scan.png
-   - assets/images/me_info.png
-   - assets/images/me_order.png
-   - assets/images/me_pay_i.png
-   - assets/images/me_setting.png
-   - assets/images/me_shop.png
-   - assets/images/me_store.png
-   - assets/images/me_vip.png
-   - assets/images/me_zone.png
-   - assets/images/me_message.png
-   - assets/images/qrcode.png
-   - assets/images/login_code.png
-   - assets/images/c_chat.png
-   - assets/images/c_friend.png
-   - assets/images/c_circle.png
-   - assets/images/c_qchat.png
-   - assets/images/good.png
-   - assets/images/s_market.png
-   - assets/images/s_note.png
-   - assets/images/s_specialoffer.png
-   - assets/images/f_call.png
-   - assets/images/f_car.png
-   - assets/images/f_charge.png
-   - assets/images/f_deliver.png
-   - assets/images/f_recycle.png
-   - assets/images/s_takeout.png
-   - assets/images/share.png
-   - assets/images/popu_article.png
-   - assets/images/popu_ask.png
-   - assets/images/popu_fly.png
-   - assets/images/popu_live.png
-   - assets/images/popu_video.png
+    - assets/images/zazhi.png
+    - assets/images/zazhi_u.png
+    - assets/images/shequ.png
+    - assets/images/shequ_u.png
+    - assets/images/shangdian.png
+    - assets/images/wode.png
+    - assets/images/wode_u.png
+    - assets/images/fuwu_u.png
+    - assets/images/fuwu.png
+    - assets/images/shangdian_u.png
+    - assets/images/logo_img.png
+    - assets/images/home_magazine_top.png
+    - assets/images/search.png
+    - assets/images/scan.png
+    - assets/images/video.png
+    - assets/images/question.png
+    - assets/images/broadcast.png
+    - assets/images/look.png
+    - assets/images/action.png
+    - assets/images/camera.png
+    - assets/images/unlogin.png
+    - assets/images/me_pay.png
+    - assets/images/me_payed.png
+    - assets/images/me_scan.png
+    - assets/images/me_info.png
+    - assets/images/me_order.png
+    - assets/images/me_pay_i.png
+    - assets/images/me_setting.png
+    - assets/images/me_shop.png
+    - assets/images/me_store.png
+    - assets/images/me_vip.png
+    - assets/images/me_zone.png
+    - assets/images/me_message.png
+    - assets/images/qrcode.png
+    - assets/images/login_code.png
+    - assets/images/c_chat.png
+    - assets/images/c_friend.png
+    - assets/images/c_circle.png
+    - assets/images/c_qchat.png
+    - assets/images/good.png
+    - assets/images/s_market.png
+    - assets/images/s_note.png
+    - assets/images/s_specialoffer.png
+    - assets/images/f_call.png
+    - assets/images/f_car.png
+    - assets/images/f_charge.png
+    - assets/images/f_deliver.png
+    - assets/images/f_recycle.png
+    - assets/images/s_takeout.png
+    - assets/images/share.png
+    - assets/images/popu_article.png
+    - assets/images/popu_ask.png
+    - assets/images/popu_fly.png
+    - assets/images/popu_live.png
+    - assets/images/popu_video.png
+    - assets/images/earth.png
 
   #   - images/a_dot_ham.jpeg
 
@@ -140,3 +141,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: ali
+      fonts:
+        - asset: fonts/iconfont.ttf

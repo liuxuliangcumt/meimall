@@ -1,19 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
-// 发布动态
 
-class PublicBehaviour extends StatefulWidget {
+//发文章
+class PublicArticle extends StatefulWidget {
   @override
-  _PublicBehaviourState createState() => _PublicBehaviourState();
+  _PublicArticleState createState() => _PublicArticleState();
 }
 
-class _PublicBehaviourState extends State<PublicBehaviour> {
+class _PublicArticleState extends State<PublicArticle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('发动态'),
+        title: Text('发文章'),
         centerTitle: true,
         leading: InkWell(
           child: Icon(Icons.arrow_back_ios),
@@ -24,7 +23,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
         actions: [
           Container(
               alignment: Alignment.center,
-              child: Text('发布',
+              child: Text('下一步',
                   style: TextStyle(fontSize: 14, color: Color(0xffC3AB87)))),
           SizedBox(
             width: 20,
@@ -41,12 +40,19 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
               listTitle(),
               TextField(
                 decoration: InputDecoration(
-                  hintText: "分享新鲜事...",
+                  hintText: "文章标题",
+                  border: InputBorder.none,
+                ),
+                style: TextStyle(fontSize: 21),
+                maxLines: 1,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "输入正文...",
                 ),
                 minLines: 6,
                 maxLines: 100,
               ),
-              localAndHideTog(),
               bottomViews()
             ],
           ),
@@ -55,49 +61,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
     );
   }
 
-  Widget localAndHideTog() {
-    return Container(
-      margin: EdgeInsets.only(top: 10),
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Color(0xffF7F7F7),
-                borderRadius: BorderRadius.all(Radius.circular(18))),
-            height: 36,
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: EasyAround(
-              child: Text(
-                '我在这里',
-                style: TextStyle(fontSize: 14, color: Color(0x99222222)),
-              ),
-              left: Icon(
-                Icons.location_on,
-                color: Colors.grey,
-                size: 20,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(),
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Color(0xffF7F7F7),
-                borderRadius: BorderRadius.all(Radius.circular(18))),
-            height: 36,
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: EasyAround(
-              child: Text('公开',
-                  style: TextStyle(fontSize: 14, color: Color(0x99222222))),
-              padding: EdgeInsets.only(left: 10),
-              left: Icon(IconData(0xe615, fontFamily: "ali"), size: 20),
-            ),
-          )
-        ],
-      ),
-    );
-  }
+
 
   Widget listTitle() {
     return Container(
@@ -146,12 +110,26 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
               size: 20,
             ),
           ),
-          Text('@', style: TextStyle(fontSize: 20)),
-          Text('#', style: TextStyle(fontSize: 20)),
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe688, fontFamily: "ali"),
+              IconData(0xe681, fontFamily: "ali"),
+              color: Colors.black,
+              size: 20,
+            ),
+          ),
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              IconData(0xe61c, fontFamily: "ali"),
+              color: Colors.black,
+              size: 20,
+            ),
+          ),
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              IconData(0xe630, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meimall/beans/behaviourcategory.dart';
+import 'package:meimall/beans/homeshop.dart';
 import 'package:meimall/commonview/CommonViews.dart';
 import 'package:meimall/customview/easyaround.dart';
 import 'package:meimall/magazine/follow.dart';
+import 'package:meimall/netUtil/NetUtil.dart';
 //动态
 
 class Behaviour extends StatefulWidget {
@@ -10,10 +13,19 @@ class Behaviour extends StatefulWidget {
 }
 
 class _BehaviourState extends State<Behaviour> {
+  List<BCategory> bCategoryBeans = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: bCategoryBeans.length,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -49,13 +61,8 @@ class _BehaviourState extends State<Behaviour> {
           ),
           Expanded(
             child: TabBar(
-              tabs: [
-                Text('榜单'),
-                Text('美食'),
-                Text('社会'),
-                Text('艺术'),
-                Text('汽车')
-              ],
+              tabs: getTabs(),
+              isScrollable: true,
               indicatorSize: TabBarIndicatorSize.label,
               indicatorColor: Color(0xffC3AB87),
             ),
@@ -64,5 +71,28 @@ class _BehaviourState extends State<Behaviour> {
         ],
       ),
     );
+  }
+
+  void getData() {
+    NetUtil.post("http://www.bjxmqy.com:9501/common/catelist", {}, (result) {
+      Map<String, dynamic> maps = result.data;
+      List shops = <dynamic>[];
+      maps.forEach((key, value) {
+        shops.add(value);
+      });
+      setState(() {
+        bCategoryBeans = shops.map((i) => BCategory.fromJson(i)).toList();
+      });
+    }, (error) {});
+  }
+
+  List<Widget> getTabs() {
+    List<Widget> list = [];
+
+    bCategoryBeans.forEach((element) {
+      list.add(Text('${element.board_title}'));
+    });
+
+    return list;
   }
 }

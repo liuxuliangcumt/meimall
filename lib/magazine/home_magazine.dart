@@ -7,6 +7,7 @@ import 'package:meimall/beans/banners.dart';
 import 'package:meimall/beans/homenews.dart';
 import 'package:meimall/loginandregister/modifypassword.dart';
 import 'package:meimall/magazine/magezine.dart';
+import 'package:meimall/magazine/q_and_ans.dart';
 import 'package:meimall/netUtil/NetUtil.dart';
 
 import 'behaviour.dart';
@@ -132,7 +133,11 @@ class HomeMagazineState extends State<HomeMagazine>
             child: fivePointItem("assets/images/action.png", "动态"),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => QuestionAndAnswer()));
+
+            },
             child: fivePointItem("assets/images/question.png", "问答"),
           ),
           InkWell(

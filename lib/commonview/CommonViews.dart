@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/magazine/publicarticle.dart';
 import 'package:meimall/magazine/publicbehaviour.dart';
 // 通用view 多处使用到的控件
 
@@ -74,6 +75,7 @@ class _CommonPopupWindowButtonState extends State<CommonPopupWindowButton> {
           onSelected: (int index) {
             switch (index) {
               case 1:
+                Navigator.push(context, MaterialPageRoute(builder: (c)=>PublicArticle()));
                 break;
               case 2:
                 Navigator.push(context,
