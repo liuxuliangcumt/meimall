@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/constant/Constants.dart';
 import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/magazine/q_all_ans.dart';
+import 'package:meimall/magazine/q_me_ans.dart';
 
 //问答详情
 class QuestionDetail extends StatefulWidget {
@@ -11,6 +13,8 @@ class QuestionDetail extends StatefulWidget {
 }
 
 class _QuestionDetailState extends State<QuestionDetail> {
+  List<String> data = ["", "", "", "", "", ""];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +25,12 @@ class _QuestionDetailState extends State<QuestionDetail> {
           Icon(Icons.format_list_bulleted),
           SizedBox(width: 15),
         ],
+        leading: InkWell(
+          child: Icon(Icons.arrow_back_ios),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Container(
           padding: EdgeInsets.only(left: 22.5, right: 22.5, bottom: 22),
@@ -44,7 +54,10 @@ class _QuestionDetailState extends State<QuestionDetail> {
                       padding: EdgeInsets.only(right: 5),
                       rowMainAxisAlignment: MainAxisAlignment.start,
                     ),
-                    onTap: () {}),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (c) => AllAnswer()));
+                    }),
                 SizedBox(height: 20),
                 Row(
                   children: [
@@ -66,22 +79,29 @@ class _QuestionDetailState extends State<QuestionDetail> {
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                    Container(
-                      height: 30,
-                      width: 110,
-                      child: EasyAround(
-                        padding: EdgeInsets.only(left: 5),
-                        left: Icon(IconData(0xe647, fontFamily: "ali"),
-                            size: 20, color: Constants.mainColor),
-                        child: Text('写回答',
-                            style: TextStyle(
-                                fontSize: 13, color: Color(0xffC3AB87))),
+                    InkWell(
+                      child: Container(
+                        height: 30,
+                        width: 110,
+                        child: EasyAround(
+                          padding: EdgeInsets.only(left: 5),
+                          left: Icon(IconData(0xe647, fontFamily: "ali"),
+                              size: 20, color: Constants.mainColor),
+                          child: Text('写回答',
+                              style: TextStyle(
+                                  fontSize: 13, color: Color(0xffC3AB87))),
+                        ),
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Color(0xffC3AB87), width: 1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xffC3AB87), width: 1),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (c) => MyAnswer()));
+                      },
+                    )
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                 ),
@@ -116,6 +136,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                   margin: EdgeInsets.only(top: 20, bottom: 20),
                 ),
                 listViewComment(),
+                bottomViews()
               ],
             ),
           )),
@@ -180,7 +201,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
   Widget listViewComment() {
     return ListView.builder(
       itemBuilder: listViewItem,
-      itemCount: 6,
+      itemCount: data.length,
       shrinkWrap: true,
       physics: new NeverScrollableScrollPhysics(),
     );
@@ -189,21 +210,30 @@ class _QuestionDetailState extends State<QuestionDetail> {
   Widget listViewItem(BuildContext context, int index) {
     return Container(
       padding: EdgeInsets.only(top: 22, bottom: 22),
-      decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.grey,width: 1))),
+      decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: Color(0xffF1F1F1), width: 1))),
       child: Column(
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ClipOval(
-                child: new FadeInImage.assetNetwork(
-                    placeholder: "assets/images/unlogin.png",
-                    //预览图
-                    fit: BoxFit.contain,
-                    image:
-                        "http://www.meichengmall.com/static/img/user.5392cec7.png",
-                    width: 46.0,
-                    height: 46.0),
+                child: Column(
+                  children: [
+                    Column(
+                      children: [
+                        new FadeInImage.assetNetwork(
+                            placeholder: "assets/images/unlogin.png",
+                            //预览图
+                            fit: BoxFit.contain,
+                            image:
+                                "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                            width: 46.0,
+                            height: 46.0),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 width: 10,
@@ -238,6 +268,53 @@ class _QuestionDetailState extends State<QuestionDetail> {
             child: Text(
                 '记录不一样的元宵节。记录不一样的元宵节记录。记录不一样的元宵节。记录不一样的元宵节记录。记录不一样的元宵节。记录不一样的元宵节记录。记录不一样的元宵节。记录不一样的元宵节记录。'),
           )
+        ],
+      ),
+    );
+  }
+
+  Widget bottomViews() {
+    return Container(
+      child: Row(
+        children: [
+          Container(
+            width: 150,
+            height: 38,
+            decoration: BoxDecoration(
+                color: Color(0x33C3AB87),
+                borderRadius: BorderRadius.all(Radius.circular(19))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.arrow_drop_up, color: Constants.mainColor),
+                Text('  赞同3.8万  | ',
+                    style: TextStyle(fontSize: 14, color: Constants.mainColor)),
+                Icon(Icons.arrow_drop_down, color: Constants.mainColor),
+              ],
+            ),
+          ),
+          Expanded(child: Container()),
+          EasyAround(
+            child: Text(
+              '14',
+              style: TextStyle(color: Colors.grey),
+            ),
+            top: Image.asset("assets/images/good.png", width: 15),
+          ),
+          SizedBox(width: 40),
+          EasyAround(
+            child: Text('12', style: TextStyle(color: Colors.grey)),
+            top: Icon(
+              IconData(0xe601, fontFamily: "ali"),
+              size: 18,
+              color: Colors.grey,
+            ),
+          ),
+          SizedBox(width: 40),
+          EasyAround(
+            child: Text('34', style: TextStyle(color: Colors.grey)),
+            top: Image.asset("assets/images/me_message.png", width: 15),
+          ),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/magazine/public_question.dart';
 import 'package:meimall/magazine/questiondetail.dart';
 //问答列表
 
@@ -39,7 +40,10 @@ class _QuestionAndAnswerState extends State<QuestionAndAnswer> {
         actions: [
           InkWell(
             child: Icon(IconData(0xe647, fontFamily: "ali")),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => PublicQuestion()));
+            },
           ),
           SizedBox(width: 20)
         ],
