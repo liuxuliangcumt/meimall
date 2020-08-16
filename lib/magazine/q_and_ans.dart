@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
 import 'package:meimall/magazine/public_question.dart';
+import 'package:meimall/magazine/public_question2.dart';
 import 'package:meimall/magazine/questiondetail.dart';
 //问答列表
 
@@ -55,6 +56,13 @@ class _QuestionAndAnswerState extends State<QuestionAndAnswer> {
           itemBuilder: listViewItem,
           itemCount: data.length + 1,
         ),
+      ),
+      bottomNavigationBar: InkWell(
+        child: Text('发布问题'),
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (c) => PublicQuestion2()));
+        },
       ),
     );
   }

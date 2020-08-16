@@ -10,6 +10,7 @@ class NetUtil {
   static post(String url, Map<String, dynamic> queryParams, Function success,
       Function error,
       {CancelToken cancelToken}) async {
+    return;
     await dioPost(url, queryParams, cancelToken, success, error);
   }
 
