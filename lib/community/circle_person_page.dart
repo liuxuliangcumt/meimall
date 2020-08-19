@@ -3,6 +3,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/constant/Constants.dart';
+import 'package:meimall/customview/easyaround.dart';
+
+import 'circle_public.dart';
 
 class CirclePersonPage extends StatefulWidget {
   @override
@@ -66,6 +69,22 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
                 ),
               ),
             ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.white,
+            child: EasyAround(
+                child: Text(
+                  "发帖",
+                  style: TextStyle(color: Colors.black, fontSize: 12),
+                ),
+                top: Icon(
+                  IconData(0xe647, fontFamily: "ali"),
+                  color: Colors.black,
+                )),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => CirclePublic()));
+            },
           ),
         ));
   }
@@ -155,13 +174,147 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               tabs: [Text('最新'), Text('精华')],
             ),
           ),
-          TabBarView(
-            children: [],
-          )
+          Expanded(
+              child: TabBarView(
+            children: [tabView(), tabView()],
+          ))
         ],
       ),
     );
   }
 
+  Widget tabView() {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: listViewItem,
+      shrinkWrap: true,
+    );
+  }
 
+  Widget listViewItem(BuildContext context, int index) {
+    return Container(
+      decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(color: Colors.grey, width: 0.5))),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 20),
+          EasyAround(
+            padding: EdgeInsets.only(left: 10),
+            rowMainAxisAlignment: MainAxisAlignment.start,
+            child:
+                Text("政龙", style: TextStyle(fontSize: 15, color: Colors.black)),
+            left: ClipOval(
+                child: new FadeInImage.assetNetwork(
+                    placeholder: "assets/images/unlogin.png",
+                    //预览图
+                    fit: BoxFit.contain,
+                    image:
+                        "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                    width: 35,
+                    height: 35)),
+          ),
+          SizedBox(height: 15),
+          Text(
+            '记录不一记录不得得录不一样的元宵节',
+            style: TextStyle(fontSize: 14, color: Color(0xff2C2C2C)),
+          ),
+          SizedBox(height: 15),
+          Container(
+            height: 100,
+            child: imageListItem(index),
+          ),
+          SizedBox(height: 20),
+          Text(
+            '#年味儿 ',
+            style: TextStyle(fontSize: 13, color: Color(0xffA1A4AF)),
+          ),
+          SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+
+  Widget imageListItem(int num) {
+    //int width=  100%index;
+    if (num == 1) {
+      return Row(
+        children: [
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          ),
+        ],
+      );
+    } else if (num == 2) {
+      return Row(
+        children: [
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          ),
+          SizedBox(width: 10),
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          ),
+        ],
+      );
+    } else if (num >= 3) {
+      return Row(
+        children: [
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          ),
+          SizedBox(width: 10),
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          ),
+          SizedBox(width: 10),
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: CachedNetworkImage(
+                fit: BoxFit.scaleDown,
+                imageUrl:
+                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+              ),
+            ),
+          )
+        ],
+      );
+    }
+  }
 }

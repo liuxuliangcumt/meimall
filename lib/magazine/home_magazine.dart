@@ -55,7 +55,7 @@ class HomeMagazineState extends State<HomeMagazine>
               ],
             ),
             SizedBox(
-              height: 32.5,
+              height: 32.5
             ),
             addressAndSearch(), //位置 搜索 扫码
             fivePoint(),

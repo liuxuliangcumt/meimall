@@ -1,5 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meimall/customview/easyaround.dart';
+
+import 'magazine_detail.dart';
 
 class Magazine extends StatefulWidget {
   @override
@@ -7,21 +11,26 @@ class Magazine extends StatefulWidget {
 }
 
 class _MagazineState extends State<Magazine> {
-  List listData = [];
-@override
+  List listData = ["", "", ""];
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
-
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 5,
         child: Scaffold(
           appBar: AppBar(
-            leading: Icon(Icons.arrow_back_ios, color: Colors.black),
+            leading: InkWell(
+              child: Icon(Icons.arrow_back_ios, color: Colors.black),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
             elevation: 0,
             actions: [
               Image.asset(
@@ -61,7 +70,8 @@ class _MagazineState extends State<Magazine> {
                         indicatorSize: TabBarIndicatorSize.label,
                         indicatorColor: Color(0xffC3AB87),
                       ),
-                       padding: EdgeInsets.only(top: 25, bottom: 30,left: 22,right: 22),
+                      padding: EdgeInsets.only(
+                          top: 25, bottom: 30, left: 22, right: 22),
                     ),
                     girdView(),
                   ],
@@ -94,26 +104,47 @@ class _MagazineState extends State<Magazine> {
   }
 
   Widget girdView() {
-    return GridView.builder(
-      shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //横轴元素个数
+    return Container(
+      padding: EdgeInsets.only(left: 22, right: 22),
+      child: GridView.builder(
+        shrinkWrap: true,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //横轴元素个数
           crossAxisCount: 2,
           //纵轴间距
-          mainAxisSpacing: 20.0,
+          mainAxisSpacing: 10.0,
           //横轴间距
           crossAxisSpacing: 10.0,
+          childAspectRatio: 1 / 1.1,
           //子组件宽高长度比例
-          childAspectRatio: 1.0),
-      itemBuilder: gridViewItem,
-      itemCount: listData.length,
+        ),
+        itemBuilder: gridViewItem,
+        itemCount: listData.length,
+      ),
     );
   }
+
   Widget gridViewItem(BuildContext context, int index) {
-    return Container(
-      child: Text("dsf"),
+    return InkWell(
+      child: Container(
+        child: Column(
+          children: [
+            CachedNetworkImage(
+              height: 150,
+              fit: BoxFit.fitWidth,
+              imageUrl:
+                  "http://www.meichengmall.com/static/img/16B1B384664.ef65c3c4.jpg",
+              placeholder: (context, url) => new CircularProgressIndicator(),
+              errorWidget: (context, url, error) => new Icon(Icons.error),
+            ),
+            Text('颜值爆表的渐变色蕾丝蛋卷一个鸡蛋做一堆', maxLines: 2),
+          ],
+        ),
+      ),
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (c) => MagazineDetail()));
+      },
     );
   }
-
-
 }
