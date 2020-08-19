@@ -3,14 +3,13 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import 'neturls.dart';
 import 'ox_log.dart';
 
 class NetUtil {
   static post(String url, Map<String, dynamic> queryParams, Function success,
       Function error,
       {CancelToken cancelToken}) async {
-    return;
+
     await dioPost(url, queryParams, cancelToken, success, error);
   }
 
@@ -61,7 +60,6 @@ class NetUtil {
           String errorMsg = response.data['message'];
           if (errorMsg.contains("token 已过期！") ||
               errorMsg.contains("登录认证失败,请重新登录")) {
-
           }
           error(errorMsg);
         }*/

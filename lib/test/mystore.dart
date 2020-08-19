@@ -11,8 +11,10 @@ class stores {
               minHeight: constraints.maxHeight,
             ),
             child: IntrinsicHeight(
-              child: Column(
-                children: [],
+              child: Container(
+                child: Column(
+                  children: [],
+                ),
               ),
             ),
           ),

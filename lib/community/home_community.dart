@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'circle_home.dart';
+
 class HomeCommunity extends StatefulWidget {
   @override
   _HomeCommunityState createState() => _HomeCommunityState();
@@ -75,7 +77,10 @@ class _HomeCommunityState extends State<HomeCommunity>
               onTap: () {},
               child: fivePointItem("assets/images/c_friend.png", "交友")),
           InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (c) => CircleHome()));
+              },
               child: fivePointItem("assets/images/c_circle.png", "圈子")),
           InkWell(
               onTap: () {},
