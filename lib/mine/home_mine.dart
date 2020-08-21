@@ -7,6 +7,8 @@ import 'package:oktoast/oktoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert' as convert;
 
+import 'setting/set_home.dart';
+
 class HomeMine extends StatefulWidget {
   @override
   _HomeMineState createState() => _HomeMineState();
@@ -161,6 +163,7 @@ class _HomeMineState extends State<HomeMine>
         }),
         funcRow("assets/images/me_setting.png", "设置", () {
           print("我的信息 设置");
+          Navigator.push(context, MaterialPageRoute(builder: (c) => SetHome()));
         }),
       ],
     );
@@ -183,6 +186,7 @@ class _HomeMineState extends State<HomeMine>
         print("dianjiel");
         if (accountNumber.length == 0) {
           showToast("请先登录");
+          d.call();
         } else {
           d.call();
         }
