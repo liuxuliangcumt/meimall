@@ -57,14 +57,59 @@ class _SetPayState extends State<SetPay> {
               trailing: Switch(
                 value: _switch_flag,
                 onChanged: (value) {
-                  _switch_flag = value;
+                  print(value);
+                  setState(() {
+                    _switch_flag = value;
+                  });
                 },
               ),
             ),
             ListTile(
-                title: Text('小额免密'),
-                subtitle: Text('开启后，支付时无需输入密码或指纹'),
-                trailing: Icon(Icons.arrow_forward_ios)),
+              title: Text('小额免密'),
+              subtitle: Text('开启后，支付时无需输入密码或指纹'),
+              trailing: Switch(
+                value: _switch_flag,
+                onChanged: (value) {
+                  print(value);
+                  setState(() {
+                    _switch_flag = value;
+                  });
+                },
+              ),
+            ),
+            ListTile(
+                title: Text('自动扣款'),
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (c) => SetPay()));
+                },
+                trailing: Icon(Icons.arrow_forward_ios,
+                    color: Color(0xff9B9B9B), size: 15)),
+            ListTile(
+              title: Text('指纹支付'),
+              subtitle: Text('开启后，支付时无需输入密码或指纹\n同意《指纹服务协议》'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (c) => SetPay()));
+              },
+              trailing: Switch(
+                value: _switch_flag,
+                onChanged: (value) {
+                  print(value);
+                  setState(() {
+                    _switch_flag = value;
+                  });
+                },
+              ),
+            ),
+            ListTile(
+                title: Text('常见问题'),
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (c) => SetPay()));
+                },
+                trailing: Icon(Icons.arrow_forward_ios,
+                    color: Color(0xff9B9B9B), size: 15)),
           ],
         ),
       ),
