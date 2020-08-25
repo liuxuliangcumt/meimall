@@ -5,7 +5,6 @@ import 'package:meimall/mine/home_mine.dart';
 import 'package:meimall/serve/home_serve.dart';
 import 'package:meimall/shop/home_shop.dart';
 import 'package:meimall/src/colors/themecolors.dart';
-import 'package:meimall/test/test.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'magazine/home_magazine.dart';
@@ -13,7 +12,6 @@ import 'magazine/home_magazine.dart';
 void main() {
   runApp(MyApp());
   // runApp(FadeAppTest());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -21,19 +19,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OKToast(
-        child: MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: ThemeColors.colorTheme,
-        appBarTheme: AppBarTheme(
-            color: Colors.white,
-            elevation: 0.5,
-            iconTheme: IconThemeData(color: Colors.grey)),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          primaryColor: ThemeColors.colorTheme,
+          appBarTheme: AppBarTheme(
+              color: Colors.white,
+              elevation: 0.5,
+              iconTheme: IconThemeData(color: Colors.grey)),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    ));
+    );
   }
 }
 

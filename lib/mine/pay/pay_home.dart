@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/constant/Constants.dart';
+import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/mine/pay/pay_cashout.dart';
+import 'package:meimall/mine/pay/pay_recharge.dart';
+import 'package:meimall/mine/pay/pay_transfer.dart';
 
 //支付首页
 class PayHome extends StatefulWidget {
@@ -24,12 +28,11 @@ class _PayHomeState extends State<PayHome> {
       ),
       body: Container(
         color: Colors.white,
-        margin: EdgeInsets.only(left: 22, right: 22),
+        padding: EdgeInsets.only(left: 22, right: 22, top: 10),
         child: Column(
           children: [
             Stack(
               children: [
-
                 Image.asset("assets/images/pay_bg.png"),
                 Positioned(
                   top: 22,
@@ -65,9 +68,136 @@ class _PayHomeState extends State<PayHome> {
                   ),
                 )
               ],
-            )
+            ),
+            threeChoise(),
+            Container(
+              padding: EdgeInsets.only(),
+              height: 56,
+              child: Row(
+                children: [
+                  Padding(
+                      child:
+                          Image.asset("assets/images/pay_dill.png", width: 25),
+                      padding: EdgeInsets.only(top: 8, right: 10)),
+                  Expanded(child: Text('账单')),
+                  Icon(Icons.arrow_forward_ios,
+                      size: 20, color: Color(0xffD0D0D0)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(),
+              height: 56,
+              child: Row(
+                children: [
+                  Padding(
+                      child: Image.asset("assets/images/pay_property.png",
+                          width: 25),
+                      padding: EdgeInsets.only(top: 8, right: 10)),
+                  Expanded(child: Text('资产')),
+                  Icon(Icons.arrow_forward_ios,
+                      size: 20, color: Color(0xffD0D0D0)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(),
+              height: 56,
+              child: Row(
+                children: [
+                  Padding(
+                      child: Image.asset("assets/images/pay_remainder.png",
+                          width: 25),
+                      padding: EdgeInsets.only(top: 8, right: 10)),
+                  Expanded(child: Text('余额')),
+                  Icon(Icons.arrow_forward_ios,
+                      size: 20, color: Color(0xffD0D0D0)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(),
+              height: 56,
+              child: Row(
+                children: [
+                  Padding(
+                      child: Image.asset("assets/images/pay_renzheng.png",
+                          width: 25),
+                      padding: EdgeInsets.only(top: 8, right: 10)),
+                  Expanded(child: Text('通证')),
+                  Icon(Icons.arrow_forward_ios,
+                      size: 20, color: Color(0xffD0D0D0)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(),
+              height: 56,
+              child: Row(
+                children: [
+                  Padding(
+                      child: Image.asset("assets/images/pay_welfare.png",
+                          width: 25),
+                      padding: EdgeInsets.only(top: 8, right: 10)),
+                  Expanded(child: Text('公益')),
+                  Icon(Icons.arrow_forward_ios,
+                      size: 20, color: Color(0xffD0D0D0)),
+                ],
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget threeChoise() {
+    return Container(
+      padding: EdgeInsets.only(top: 40, bottom: 25),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => PayRecharge()));
+            },
+            child: EasyAround(
+              padding: EdgeInsets.only(top: 10),
+              top: Image.asset("assets/images/pay_recharge.png", width: 21),
+              child: Text('充值',
+                  style: TextStyle(fontSize: 12, color: Color(0xff787878))),
+            ),
+          ),
+          InkWell(
+            child: EasyAround(
+              padding: EdgeInsets.only(top: 10),
+              top: Image.asset("assets/images/pay_trans.png", width: 21),
+              child: Text(
+                '转账',
+                style: TextStyle(fontSize: 12, color: Color(0xff787878)),
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => PayTransfer()));
+            },
+          ),
+          InkWell(
+            child: EasyAround(
+              padding: EdgeInsets.only(top: 10),
+              top: Image.asset("assets/images/pay_cashout.png", width: 21),
+              child: Text(
+                '提现',
+                style: TextStyle(fontSize: 12, color: Color(0xff787878)),
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => PayCashout()));
+            },
+          )
+        ],
       ),
     );
   }

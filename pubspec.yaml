@@ -114,6 +114,18 @@ flutter:
     - assets/images/popu_video.png
     - assets/images/earth.png
     - assets/images/pay_bg.png
+    - assets/images/pay_recharge.png
+    - assets/images/pay_cashout.png
+    - assets/images/pay_trans.png
+    - assets/images/pay_dill.png
+    - assets/images/pay_property.png
+    - assets/images/pay_welfare.png
+    - assets/images/pay_renzheng.png
+    - assets/images/pay_remainder.png
+    - assets/images/pay_ali.png
+    - assets/images/pay_wechat.png
+    - assets/images/pay_slices.png
+    - assets/images/pay_address_list.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
