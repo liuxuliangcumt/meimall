@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meimall/mine/pay/pay_identification.dart';
 
 //支付中心
 class SetPay extends StatefulWidget {
@@ -28,6 +29,10 @@ class _SetPayState extends State<SetPay> {
           children: [
             ListTile(
               title: Text('实名认证'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (c) => PayIdentification()));
+              },
               trailing: Container(
                 width: 230,
                 child: Row(

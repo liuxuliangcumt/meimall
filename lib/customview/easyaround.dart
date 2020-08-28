@@ -7,11 +7,15 @@ class EasyAround extends StatelessWidget {
   Widget right;
   Widget bottom;
   Widget child;
+  double height;
+  double width;
   EdgeInsetsGeometry padding;
   MainAxisAlignment rowMainAxisAlignment;
   CrossAxisAlignment rowCrossAxisAlignment;
   CrossAxisAlignment columnCrossAxisAlignment;
   MainAxisAlignment columnMainAxisAlignment;
+  BoxDecoration boxDecoration;
+  EdgeInsetsGeometry outPadding;
 
   EasyAround(
       {this.top,
@@ -19,6 +23,10 @@ class EasyAround extends StatelessWidget {
       this.left,
       this.right,
       this.bottom,
+      this.boxDecoration,
+      this.outPadding,
+      this.width,
+      this.height,
       this.rowCrossAxisAlignment = CrossAxisAlignment.center,
       this.rowMainAxisAlignment = MainAxisAlignment.center,
       this.columnCrossAxisAlignment = CrossAxisAlignment.center,
@@ -30,6 +38,10 @@ class EasyAround extends StatelessWidget {
     // TODO: implement build
 
     return Container(
+      width: width ?? width,
+      height: height ?? height,
+      decoration: boxDecoration ?? boxDecoration,
+      padding: outPadding ?? outPadding,
       child: Column(
         mainAxisAlignment: columnMainAxisAlignment,
         crossAxisAlignment: columnCrossAxisAlignment,

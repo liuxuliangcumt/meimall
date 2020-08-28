@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:meimall/constant/Constants.dart';
 import 'package:meimall/customview/easyaround.dart';
 import 'package:meimall/mine/pay/pay_cashout.dart';
+import 'package:meimall/mine/pay/pay_dill.dart';
+import 'package:meimall/mine/pay/pay_proprety.dart';
 import 'package:meimall/mine/pay/pay_recharge.dart';
 import 'package:meimall/mine/pay/pay_transfer.dart';
 
@@ -70,35 +72,46 @@ class _PayHomeState extends State<PayHome> {
               ],
             ),
             threeChoise(),
-            Container(
-              padding: EdgeInsets.only(),
-              height: 56,
-              child: Row(
-                children: [
-                  Padding(
-                      child:
-                          Image.asset("assets/images/pay_dill.png", width: 25),
-                      padding: EdgeInsets.only(top: 8, right: 10)),
-                  Expanded(child: Text('账单')),
-                  Icon(Icons.arrow_forward_ios,
-                      size: 20, color: Color(0xffD0D0D0)),
-                ],
+            InkWell(
+                child: Container(
+                  padding: EdgeInsets.only(),
+                  height: 56,
+                  child: Row(
+                    children: [
+                      Padding(
+                          child: Image.asset("assets/images/pay_dill.png",
+                              width: 25),
+                          padding: EdgeInsets.only(top: 8, right: 10)),
+                      Expanded(child: Text('账单')),
+                      Icon(Icons.arrow_forward_ios,
+                          size: 20, color: Color(0xffD0D0D0)),
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (n) => PayDill()));
+                }),
+            InkWell(
+              child: Container(
+                padding: EdgeInsets.only(),
+                height: 56,
+                child: Row(
+                  children: [
+                    Padding(
+                        child: Image.asset("assets/images/pay_property.png",
+                            width: 25),
+                        padding: EdgeInsets.only(top: 8, right: 10)),
+                    Expanded(child: Text('资产')),
+                    Icon(Icons.arrow_forward_ios,
+                        size: 20, color: Color(0xffD0D0D0)),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(),
-              height: 56,
-              child: Row(
-                children: [
-                  Padding(
-                      child: Image.asset("assets/images/pay_property.png",
-                          width: 25),
-                      padding: EdgeInsets.only(top: 8, right: 10)),
-                  Expanded(child: Text('资产')),
-                  Icon(Icons.arrow_forward_ios,
-                      size: 20, color: Color(0xffD0D0D0)),
-                ],
-              ),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (c) => PayProprety()));
+              },
             ),
             Container(
               padding: EdgeInsets.only(),

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/loginandregister/login.dart';
 import 'package:meimall/mine/pay/pay_home.dart';
+import 'package:meimall/mine/store/Store.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert' as convert;
@@ -149,6 +150,8 @@ class _HomeMineState extends State<HomeMine>
         }),
         funcRow("assets/images/me_store.png", "收藏", () {
           print("我的信息 收藏");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (c) => MineStore()));
         }),
         funcRow("assets/images/me_pay_i.png", "支付", () {
           print("我的信息 支付");
