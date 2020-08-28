@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:meimall/loginandregister/login.dart';
 import 'package:meimall/mine/pay/pay_home.dart';
 import 'package:meimall/mine/store/Store.dart';
+import 'package:meimall/mine/zone/zone_home.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert' as convert;
@@ -160,6 +161,8 @@ class _HomeMineState extends State<HomeMine>
         }),
         funcRow("assets/images/me_zone.png", "空间", () {
           print("我的信息 空间");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (c) => ZoneHome()));
         }),
         funcRow("assets/images/me_shop.png", "小店", () {
           print("我的信息 小店");
