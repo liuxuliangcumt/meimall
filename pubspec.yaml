@@ -129,6 +129,8 @@ flutter:
     - assets/images/pay_property_bg.png
     - assets/images/zone_bg.png
     - assets/images/zone_calendar.png
+    - assets/images/zone_guest_bg.png
+    - assets/images/zone_daily_bill.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
