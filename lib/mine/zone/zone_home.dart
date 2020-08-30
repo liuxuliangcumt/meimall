@@ -153,7 +153,7 @@ class _ZoneHomeState extends State<ZoneHome> {
                               decoration: BoxDecoration(
                                   border: Border(
                                       bottom: BorderSide(
-                                          color: Colors.grey, width: 0.5))),
+                                          color: Color(0xffF1F1F1), width: 0.5))),
                               margin: EdgeInsets.only(left: 22, right: 22),
                               child: Row(
                                 children: [
