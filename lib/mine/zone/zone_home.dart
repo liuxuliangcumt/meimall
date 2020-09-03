@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
 import 'package:meimall/mine/zone/zone_daily.dart';
 import 'package:meimall/mine/zone/zone_guest.dart';
+import 'package:meimall/mine/zone/zone_photos.dart';
 import 'package:meimall/mine/zone/zone_word.dart';
 
 //空间主页
@@ -138,7 +139,15 @@ class _ZoneHomeState extends State<ZoneHome> {
                                               builder: (c) => ZoneDaily()));
                                     },
                                   ),
-                                  Text('相册', style: whiteStyle),
+                                  InkWell(
+                                    child: Text('相册', style: whiteStyle),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (c) => ZonePhotos()));
+                                    },
+                                  ),
                                   Text('文章', style: whiteStyle),
                                   Text('社区', style: whiteStyle),
                                   Text('说说', style: whiteStyle)
@@ -153,7 +162,8 @@ class _ZoneHomeState extends State<ZoneHome> {
                               decoration: BoxDecoration(
                                   border: Border(
                                       bottom: BorderSide(
-                                          color: Color(0xffF1F1F1), width: 0.5))),
+                                          color: Color(0xffF1F1F1),
+                                          width: 0.5))),
                               margin: EdgeInsets.only(left: 22, right: 22),
                               child: Row(
                                 children: [
@@ -287,9 +297,7 @@ class _ZoneHomeState extends State<ZoneHome> {
         Image.asset("assets/images/me_message.png", width: 14, height: 14),
         SizedBox(width: 40),
         EasyAround(
-          padding: EdgeInsets.only(
-            left: 5,
-          ),
+          padding: EdgeInsets.only(left: 5),
           child: Text('4',
               style: TextStyle(fontSize: 13, color: Color(0xffA1A4AF))),
           left: Image.asset("assets/images/good.png", width: 14, height: 14),

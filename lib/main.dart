@@ -8,6 +8,7 @@ import 'package:meimall/src/colors/themecolors.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'magazine/home_magazine.dart';
+import 'magazine/home_magazine2.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,8 +48,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final pages = [
+    HomeMagazine2(),
     HomeMagazine(),
-    HomeCommunity(),
+
+   // HomeCommunity(),
     HomeShop(),
     HomeServe(),
     HomeMine()

@@ -131,6 +131,20 @@ flutter:
     - assets/images/zone_calendar.png
     - assets/images/zone_guest_bg.png
     - assets/images/zone_daily_bill.png
+    - assets/images/z_carmera_s.png
+    - assets/images/z_carmera_u.png
+    - assets/images/z_loca_u.png
+    - assets/images/z_loca_s.png
+    - assets/images/z_pic_u.png
+    - assets/images/z_pic_u.png
+    - assets/images/z_video_u.png
+    - assets/images/home_scan.png
+    - assets/images/home_tra.png
+    - assets/images/home_rec.png
+    - assets/images/home_qr.png
+    - assets/images/h_1.png
+    - assets/images/h_4.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
