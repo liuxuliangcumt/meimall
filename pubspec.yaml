@@ -37,7 +37,8 @@ dependencies:
   location: ^3.0.0
   oktoast: ^2.3.2
   flutter_verification_box: ^1.0.3
-
+  camera: ^0.5.8+5
+  barcode_scan: ^3.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

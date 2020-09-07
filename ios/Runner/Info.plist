@@ -43,5 +43,7 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>获取您所在的城市</string>
+	<key>NSCameraUsageDescription</key>
+        <string>Camera permission is required for barcode scanning.</string>
 </dict>
 </plist>

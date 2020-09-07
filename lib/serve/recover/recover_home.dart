@@ -8,6 +8,8 @@ import 'package:meimall/netUtil/NetUtil.dart';
 import 'package:meimall/serve/recover/recover_address.dart';
 import 'package:meimall/serve/recover/recover_bar.dart';
 import 'package:meimall/serve/recover/recover_car.dart';
+import 'package:meimall/serve/recover/recover_myorders.dart';
+import 'package:meimall/serve/recover/recover_orders.dart';
 import 'package:meimall/serve/recover/recover_scan.dart';
 
 //回收主页
@@ -108,7 +110,10 @@ class _RecoverHomeState extends State<RecoverHome> {
                       ),
                       InkWell(
                         child: listItem("assets/images/rec_h_7.png", "我的回收订单"),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (c) => RecoverMyOrder()));
+                        },
                       ),
                     ],
                   ),
