@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/constant/Constants.dart';
 import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/mine/setting/home_set.dart';
 
 //修改后杂志
 class HomeMagazine2 extends StatefulWidget {
@@ -18,7 +19,7 @@ class _HomeMagazine2State extends State<HomeMagazine2> {
     {"img": "assets/images/h_4.png", "name": "交友"},
     {"img": "assets/images/look.png", "name": "问答"},
     {"img": "assets/images/video.png", "name": "视频"},
-    {"img": "assets/images/look.png", "name": "外面"},
+    {"img": "assets/images/look.png", "name": "外卖"},
     {"img": "assets/images/h_1.png", "name": "美食"},
     {"img": "assets/images/h_1.png", "name": "特价"},
     {"img": "assets/images/h_1.png", "name": "团购"},
@@ -67,14 +68,18 @@ class _HomeMagazine2State extends State<HomeMagazine2> {
                   Container(
                     height: 110,
                     margin: EdgeInsets.only(left: 22, right: 22, top: 12),
-                    child: CachedNetworkImage(
-                      fit: BoxFit.cover,
-                      height: 110,
-                      width: MediaQuery.of(context).size.width - 44,
-                      imageUrl:
-                          "http://www.meichengmall.com/wap/static/img/b1.2547b2ab.png",
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: CachedNetworkImage(
+                        fit: BoxFit.cover,
+                        height: 110,
+                        width: MediaQuery.of(context).size.width - 44,
+                        imageUrl:
+                            "http://www.meichengmall.com/wap/static/img/b1.2547b2ab.png",
+                      ),
                     ),
                   ),
+
                   Container(
                     padding: EdgeInsets.only(
                         left: 22, right: 22, top: 25, bottom: 20),
@@ -233,9 +238,9 @@ class _HomeMagazine2State extends State<HomeMagazine2> {
   Widget functions() {
     return Container(
       margin: EdgeInsets.only(left: 10, right: 10),
-      padding: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 10, top: 0),
       decoration: BoxDecoration(
-          color: Colors.purpleAccent, borderRadius: BorderRadius.circular(10)),
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           itemCount: funcData.length,
@@ -250,12 +255,27 @@ class _HomeMagazine2State extends State<HomeMagazine2> {
   }
 
   Widget girdViewItem(BuildContext context, int index) {
-    return Container(
-      child: EasyAround(
-        child: Text(" name$index"),
-        top: Image.asset("", width: 20),
+    return InkWell(
+      child: Container(
+        child: Column(
+          children: [
+            SizedBox(
+                child: Image.asset(funcData[index]["img"], width: 20),
+                width: 20,
+                height: 20),
+            SizedBox(height: 5),
+            Text(funcData[index]["name"]),
+          ],
+        ),
       ),
-      color: Colors.cyan,
+      onTap: () {
+        switch (funcData[index]["name"]) {
+          case "更多":
+            Navigator.push(
+                context, MaterialPageRoute(builder: (c) => HomeSet()));
+            break;
+        }
+      },
     );
   }
 

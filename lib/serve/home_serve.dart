@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:meimall/beans/banners.dart';
 import 'package:meimall/netUtil/NetUtil.dart';
+import 'package:meimall/serve/recover/recover_home.dart';
 
 class HomeServe extends StatefulWidget {
   @override
@@ -109,7 +110,10 @@ class _HomeServeState extends State<HomeServe>
             child: fivePointItem("assets/images/f_deliver.png", "闪送"),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (c) => RecoverHome()));
+            },
             child: fivePointItem("assets/images/f_recycle.png", "回收"),
           ),
           InkWell(
@@ -279,13 +283,14 @@ class _HomeServeState extends State<HomeServe>
                       SizedBox(height: 30),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.remove_red_eye, color: Colors.grey,size: 13),
+                          Icon(Icons.remove_red_eye,
+                              color: Colors.grey, size: 13),
                           Text('1100')
                         ],
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.watch_later, color: Colors.grey,size: 13 ),
+                          Icon(Icons.watch_later, color: Colors.grey, size: 13),
                           Text('11-11 12:00')
                         ],
                       )
@@ -301,7 +306,7 @@ class _HomeServeState extends State<HomeServe>
               children: <Widget>[
                 CachedNetworkImage(
                   imageUrl:
-                  "http://www.meichengmall.com/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
+                      "http://www.meichengmall.com/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
                   fit: BoxFit.cover,
                   width: 120,
                   height: 120,
@@ -321,13 +326,14 @@ class _HomeServeState extends State<HomeServe>
                       SizedBox(height: 30),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.remove_red_eye, color: Colors.grey,size: 13),
+                          Icon(Icons.remove_red_eye,
+                              color: Colors.grey, size: 13),
                           Text('1100')
                         ],
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.watch_later, color: Colors.grey,size: 13 ),
+                          Icon(Icons.watch_later, color: Colors.grey, size: 13),
                           Text('11-11 12:00')
                         ],
                       )

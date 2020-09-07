@@ -144,6 +144,22 @@ flutter:
     - assets/images/home_qr.png
     - assets/images/h_1.png
     - assets/images/h_4.png
+    - assets/images/rec_parp.png
+    - assets/images/rec_metal.png
+    - assets/images/rec_plastic.png
+    - assets/images/rec_fabrics.png
+    - assets/images/rec_phone.png
+    - assets/images/rec_scan.png
+    - assets/images/rec_ondoor.png
+    - assets/images/rec_h_1.png
+    - assets/images/rec_h_2.png
+    - assets/images/rec_h_3.png
+    - assets/images/rec_h_4.png
+    - assets/images/rec_h_5.png
+    - assets/images/rec_h_6.png
+    - assets/images/rec_h_7.png
+    - assets/images/rec_h_8.png
+    - assets/images/rec_h_loca.png
 
   #   - images/a_dot_ham.jpeg
 
