@@ -8,9 +8,12 @@ import 'package:meimall/netUtil/NetUtil.dart';
 import 'package:meimall/serve/recover/recover_address.dart';
 import 'package:meimall/serve/recover/recover_bar.dart';
 import 'package:meimall/serve/recover/recover_car.dart';
+import 'package:meimall/serve/recover/recover_fund.dart';
 import 'package:meimall/serve/recover/recover_myorders.dart';
+import 'package:meimall/serve/recover/recover_ondoor.dart';
 import 'package:meimall/serve/recover/recover_orders.dart';
 import 'package:meimall/serve/recover/recover_scan.dart';
+import 'package:meimall/serve/recover/recoverman/recoverman_home.dart';
 
 //回收主页
 class RecoverHome extends StatefulWidget {
@@ -89,7 +92,10 @@ class _RecoverHomeState extends State<RecoverHome> {
                       ),
                       InkWell(
                         child: listItem("assets/images/rec_h_4.png", "我的环保积分"),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (c) => RecoverFund()));
+                        },
                       ),
                       InkWell(
                         child: listItem("assets/images/rec_h_5.png", "积分兑换商城"),
@@ -97,7 +103,12 @@ class _RecoverHomeState extends State<RecoverHome> {
                       ),
                       InkWell(
                         child: listItem("assets/images/rec_h_6.png", "加入美城回收"),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (c) => RecoverManHome()));
+                        },
                       ),
                       InkWell(
                         child: listItem("assets/images/rec_h_8.png", "回收地址管理"),
@@ -237,28 +248,37 @@ class _RecoverHomeState extends State<RecoverHome> {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              height: 153,
-              decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                BoxShadow(
-                    color: Colors.grey, offset: Offset(1.0, 1.0), blurRadius: 2)
-              ]),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/rec_ondoor.png",
-                    width: 46,
-                    height: 46,
-                  ),
-                  SizedBox(height: 10),
-                  Text('上门回收', style: TextStyle(fontSize: 15)),
-                  SizedBox(height: 10),
-                  Text('一键呼叫, 在线下单',
-                      style: TextStyle(fontSize: 12, color: Color(0xff787878)))
-                ],
+            child: InkWell(
+              child: Container(
+                alignment: Alignment.center,
+                height: 153,
+                decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(1.0, 1.0),
+                      blurRadius: 2)
+                ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/images/rec_ondoor.png",
+                      width: 46,
+                      height: 46,
+                    ),
+                    SizedBox(height: 10),
+                    Text('上门回收', style: TextStyle(fontSize: 15)),
+                    SizedBox(height: 10),
+                    Text('一键呼叫, 在线下单',
+                        style:
+                            TextStyle(fontSize: 12, color: Color(0xff787878)))
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (c) => RecoverOndoor()));
+              },
             ),
           ),
           SizedBox(width: 10),

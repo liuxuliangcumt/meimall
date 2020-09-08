@@ -161,6 +161,12 @@ flutter:
     - assets/images/rec_h_7.png
     - assets/images/rec_h_8.png
     - assets/images/rec_h_loca.png
+    - assets/images/recover_card.png
+    - assets/images/ali_pay.png
+    - assets/images/wechat_pay.png
+    - assets/images/recoverman_points.png
+    - assets/images/recoverman.png
+    - assets/images/recoverman_storehouse.png
 
   #   - images/a_dot_ham.jpeg
 
