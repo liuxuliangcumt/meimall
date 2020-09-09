@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //个人信息
@@ -211,7 +213,49 @@ class _RecoverManInfoState extends State<RecoverManInfo> {
                         ],
                       ),
                     ),
-
+                    Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                              width: 60,
+                              child: Text(
+                                '身份认证',
+                                style: style1,
+                              )),
+                          SizedBox(width: 46),
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.all(18),
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(color: Colors.grey, width: 1),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Column(
+                                children: [
+                                  CachedNetworkImage(
+                                    height: 160,
+                                    fit: BoxFit.cover,
+                                    width: 200,
+                                    imageUrl:
+                                        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599626344886&di=14b1a1a6bd875341778524c8cee8f6f1&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20165_29_10%2Fa3vwtv5815261661352.jpg",
+                                  ),
+                                  SizedBox(height: 20),
+                                  CachedNetworkImage(
+                                    height: 160,
+                                    fit: BoxFit.cover,
+                                    width: 200,
+                                    imageUrl:
+                                        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599626344886&di=14b1a1a6bd875341778524c8cee8f6f1&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20165_29_10%2Fa3vwtv5815261661352.jpg",
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20)
                   ],
                 ),
               ),

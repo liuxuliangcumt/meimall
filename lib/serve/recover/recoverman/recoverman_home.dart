@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meimall/customview/easyaround.dart';
+import 'package:meimall/serve/recover/recoverman/recoverman_collect.dart';
 import 'package:meimall/serve/recover/recoverman/recoverman_info.dart';
+import 'package:meimall/serve/recover/recoverman/recoverman_profit.dart';
+import 'package:meimall/serve/recover/recoverman/recoverman_sark.dart';
+
+import 'grab_order.dart';
 
 //回收员主页
 class RecoverManHome extends StatefulWidget {
@@ -14,7 +19,7 @@ class _RecoverManHomeState extends State<RecoverManHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('添加回收物品'),
+        title: Text('陌陌大师'),
         elevation: 0,
         centerTitle: true,
         leading: InkWell(
@@ -102,7 +107,12 @@ class _RecoverManHomeState extends State<RecoverManHome> {
                           ],
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (c) => RecoverManProfit()));
+                      },
                     ),
                     InkWell(
                       child: Container(
@@ -132,7 +142,12 @@ class _RecoverManHomeState extends State<RecoverManHome> {
                           ],
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (c) => RecoverManSark()));
+                      },
                     ),
                     InkWell(
                       child: Container(
@@ -201,7 +216,10 @@ class _RecoverManHomeState extends State<RecoverManHome> {
                     ),
                     SizedBox(height: 20),
                     MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (c) => GrabOrder()));
+                        },
                         height: 50,
                         minWidth: 200,
                         shape: StadiumBorder(),
@@ -255,13 +273,20 @@ class _RecoverManHomeState extends State<RecoverManHome> {
               style: TextStyle(fontSize: 12, color: Color(0xff777777)),
             ),
           ),
-          EasyAround(
-            top: Image.asset("assets/images/recoverman_points.png", width: 22),
-            padding: EdgeInsets.only(top: 10),
-            child: Text(
-              '收积分',
-              style: TextStyle(fontSize: 12, color: Color(0xff777777)),
+          InkWell(
+            child: EasyAround(
+              top:
+                  Image.asset("assets/images/recoverman_points.png", width: 22),
+              padding: EdgeInsets.only(top: 10),
+              child: Text(
+                '收积分',
+                style: TextStyle(fontSize: 12, color: Color(0xff777777)),
+              ),
             ),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (c) => RecoverManCollect()));
+            },
           ),
           EasyAround(
             top: Image.asset("assets/images/recoverman_points.png", width: 22),

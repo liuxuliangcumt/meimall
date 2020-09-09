@@ -167,6 +167,9 @@ flutter:
     - assets/images/recoverman_points.png
     - assets/images/recoverman.png
     - assets/images/recoverman_storehouse.png
+    - assets/images/r_profit_bg.png
+    - assets/images/r_on_door.png
+    - assets/images/r_pay.png
 
   #   - images/a_dot_ham.jpeg
 
