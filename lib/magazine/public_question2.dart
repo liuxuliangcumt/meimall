@@ -107,7 +107,7 @@ class _PublicQuestion2State extends State<PublicQuestion2> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe92e, fontFamily: "ali"),
+              const IconData(0xe92e, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -115,7 +115,7 @@ class _PublicQuestion2State extends State<PublicQuestion2> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe681, fontFamily: "ali"),
+              const IconData(0xe681, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -123,7 +123,7 @@ class _PublicQuestion2State extends State<PublicQuestion2> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe60a, fontFamily: "ali"),
+              const IconData(0xe60a, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -131,7 +131,7 @@ class _PublicQuestion2State extends State<PublicQuestion2> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe629, fontFamily: "ali"),
+              const IconData(0xe629, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -155,7 +155,7 @@ class _PublicQuestion2State extends State<PublicQuestion2> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe618, fontFamily: "ali"),
+              const IconData(0xe618, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),

@@ -83,7 +83,7 @@ class _ZoneDailyAddState extends State<ZoneDailyAdd> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe688, fontFamily: "ali"),
+              const IconData(0xe688, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -91,7 +91,7 @@ class _ZoneDailyAddState extends State<ZoneDailyAdd> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe92e, fontFamily: "ali"),
+              const IconData(0xe92e, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -99,7 +99,7 @@ class _ZoneDailyAddState extends State<ZoneDailyAdd> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe681, fontFamily: "ali"),
+              const IconData(0xe681, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -110,7 +110,7 @@ class _ZoneDailyAddState extends State<ZoneDailyAdd> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe60f, fontFamily: "ali"),
+              const IconData(0xe60f, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -118,7 +118,7 @@ class _ZoneDailyAddState extends State<ZoneDailyAdd> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe612, fontFamily: "ali"),
+              const IconData(0xe612, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),

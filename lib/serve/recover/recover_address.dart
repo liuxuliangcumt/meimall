@@ -118,7 +118,7 @@ class _RecoverAddressState extends State<RecoverAddress> {
                   child: Text('设为默认',
                       style:
                           TextStyle(fontSize: 12, color: Color(0xff9C9C9C)))),
-              Icon(IconData(0xe647, fontFamily: "ali"),
+              Icon(const IconData(0xe647, fontFamily: "ali"),
                   size: 15, color: Color(0xff9C9C9C)),
               Text(
                 '  编辑    |    ',

@@ -27,7 +27,7 @@ class _RecoverManInfoState extends State<RecoverManInfo> {
         ),
         actions: [
           InkWell(
-            child: Icon(IconData(0xe618, fontFamily: "ali"), size: 20),
+            child: Icon(const IconData(0xe618, fontFamily: "ali"), size: 20),
             onTap: () {},
           ),
           SizedBox(width: 22)

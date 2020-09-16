@@ -40,7 +40,7 @@ class _QuestionAndAnswerState extends State<QuestionAndAnswer> {
         ),
         actions: [
           InkWell(
-            child: Icon(IconData(0xe647, fontFamily: "ali")),
+            child: Icon(const IconData(0xe647, fontFamily: "ali")),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (c) => PublicQuestion()));

@@ -30,7 +30,7 @@ class _RecoverManHomeState extends State<RecoverManHome> {
         ),
         actions: [
           InkWell(
-            child: Icon(IconData(0xe604, fontFamily: "ali"), size: 20),
+            child: Icon(const IconData(0xe604, fontFamily: "ali"), size: 20),
             onTap: () {},
           )
         ],

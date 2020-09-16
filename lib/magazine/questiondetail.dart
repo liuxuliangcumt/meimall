@@ -66,7 +66,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                       width: 110,
                       child: EasyAround(
                         padding: EdgeInsets.only(left: 5),
-                        left: Icon(IconData(0xe76e, fontFamily: "ali"),
+                        left: Icon(const IconData(0xe76e, fontFamily: "ali"),
                             size: 16, color: Constants.mainColor),
                         child: Text(
                           '邀请回答',
@@ -85,7 +85,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                         width: 110,
                         child: EasyAround(
                           padding: EdgeInsets.only(left: 5),
-                          left: Icon(IconData(0xe647, fontFamily: "ali"),
+                          left: Icon(const IconData(0xe647, fontFamily: "ali"),
                               size: 20, color: Constants.mainColor),
                           child: Text('写回答',
                               style: TextStyle(
@@ -305,7 +305,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
           EasyAround(
             child: Text('12', style: TextStyle(color: Colors.grey)),
             top: Icon(
-              IconData(0xe601, fontFamily: "ali"),
+              const  IconData(0xe601, fontFamily: "ali"),
               size: 18,
               color: Colors.grey,
             ),

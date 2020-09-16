@@ -115,7 +115,7 @@ class _PublicQuestionState extends State<PublicQuestion> {
             "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
       ),
       InkWell(
-        child: Icon(IconData(0xe619, fontFamily: "ali"), size: 20),
+        child: Icon(const IconData(0xe619, fontFamily: "ali"), size: 20),
         onTap: () {},
       )
     ]);
@@ -144,7 +144,7 @@ class _PublicQuestionState extends State<PublicQuestion> {
           Image.asset("assets/images/camera.png", width: 20),
           Text('#', style: TextStyle(fontSize: 20)),
           Icon(
-            IconData(0xe60b, fontFamily: "ali"),
+            const  IconData(0xe60b, fontFamily: "ali"),
             size: 18,
           )
         ],

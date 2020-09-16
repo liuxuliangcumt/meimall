@@ -119,7 +119,7 @@ class _HomeSetState extends State<HomeSet> {
               visible: isEdit,
               child: InkWell(
                   onTap: () {},
-                  child: Icon(IconData(0xe616, fontFamily: "ali"), size: 16)),
+                  child: Icon(const IconData(0xe616, fontFamily: "ali"), size: 16)),
             ),
           ),
           Positioned(
@@ -155,7 +155,7 @@ class _HomeSetState extends State<HomeSet> {
               visible: isEdit,
               child: InkWell(
                   onTap: () {},
-                  child: Icon(IconData(0xe629, fontFamily: "ali"),
+                  child: Icon(const IconData(0xe629, fontFamily: "ali"),
                       color: Constants.mainColor, size: 16)),
             ),
           ),

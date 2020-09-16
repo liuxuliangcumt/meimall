@@ -105,7 +105,7 @@ class _PublicArticleState extends State<PublicArticle> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe92e, fontFamily: "ali"),
+              const IconData(0xe92e, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -113,7 +113,7 @@ class _PublicArticleState extends State<PublicArticle> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe681, fontFamily: "ali"),
+              const  IconData(0xe681, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -121,7 +121,7 @@ class _PublicArticleState extends State<PublicArticle> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe61c, fontFamily: "ali"),
+              const IconData(0xe61c, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -129,7 +129,7 @@ class _PublicArticleState extends State<PublicArticle> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe630, fontFamily: "ali"),
+              const IconData(0xe630, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -137,7 +137,7 @@ class _PublicArticleState extends State<PublicArticle> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe629, fontFamily: "ali"),
+              const IconData(0xe629, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),

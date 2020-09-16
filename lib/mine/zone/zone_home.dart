@@ -49,7 +49,7 @@ class _ZoneHomeState extends State<ZoneHome> {
                 actions: [
                   Icon(Icons.search),
                   SizedBox(width: 20),
-                  Icon(IconData(0xe611, fontFamily: "ali")),
+                  Icon( const IconData(0xe611, fontFamily: "ali")),
                   SizedBox(width: 20),
                 ],
               ),
@@ -269,7 +269,7 @@ class _ZoneHomeState extends State<ZoneHome> {
             ),
           ),
           Icon(
-            IconData(0xe657, fontFamily: "ali"),
+            const  IconData(0xe657, fontFamily: "ali"),
             size: 20,
           )
         ],

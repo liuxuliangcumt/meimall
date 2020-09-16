@@ -18,7 +18,7 @@ class _AllAnswerState extends State<AllAnswer> {
         actions: [
           Icon(Icons.search),
           SizedBox(width: 10),
-          Icon(IconData(0xe657, fontFamily: "ali")),
+          Icon(const IconData(0xe657, fontFamily: "ali")),
           SizedBox(width: 15),
         ],
         title: Text('中国传统节日—元宵节的起因由来？'),
@@ -96,7 +96,7 @@ class _AllAnswerState extends State<AllAnswer> {
               padding: EdgeInsets.only(right: 8),
               child: Text('12', style: TextStyle(color: Colors.grey)),
               right: Icon(
-                IconData(0xe601, fontFamily: "ali"),
+                const  IconData(0xe601, fontFamily: "ali"),
                 size: 18,
                 color: Colors.grey,
               ),

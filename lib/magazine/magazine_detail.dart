@@ -342,7 +342,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
           EasyAround(
             child: Text('12', style: TextStyle(color: Colors.grey)),
             top: Icon(
-              IconData(0xe601, fontFamily: "ali"),
+             const IconData(0xe601, fontFamily: "ali"),
               size: 18,
               color: Colors.grey,
             ),
@@ -361,7 +361,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
               '14',
               style: TextStyle(color: Colors.grey),
             ),
-            top: Icon(IconData(0xe602, fontFamily: "ali"),
+            top: Icon(const IconData(0xe602, fontFamily: "ali"),
                 size: 18, color: Colors.grey),
           ),
         ],

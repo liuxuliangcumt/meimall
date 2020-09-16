@@ -134,7 +134,7 @@ class _MineStoreState extends State<MineStore> {
                       height: 22,
                       padding: EdgeInsets.only(left: 5),
                       left: Icon(
-                        IconData(0xe82a, fontFamily: "ali"),
+                        const  IconData(0xe82a, fontFamily: "ali"),
                         size: 13,
                       ),
                       outPadding: EdgeInsets.only(left: 10, right: 10),
@@ -181,7 +181,7 @@ class _MineStoreState extends State<MineStore> {
           style: TextStyle(fontSize: 16, color: Color(0xff2C2C2C)),
         ),
         trailing: Icon(
-          IconData(0xe657, fontFamily: "ali"),
+          const  IconData(0xe657, fontFamily: "ali"),
           size: 15,
         ),
       ),
@@ -277,7 +277,7 @@ class _MineStoreState extends State<MineStore> {
                 style: TextStyle(fontSize: 12, color: Color(0xffA1A4AF)),
               ),
         trailing: Icon(
-          IconData(0xe657, fontFamily: "ali"),
+          const  IconData(0xe657, fontFamily: "ali"),
           size: 15,
         ),
       ),

@@ -142,7 +142,7 @@ class _ZoneWordState extends State<ZoneWord> {
             ),
           ),
           Icon(
-            IconData(0xe657, fontFamily: "ali"),
+            const   IconData(0xe657, fontFamily: "ali"),
             size: 20,
           )
         ],

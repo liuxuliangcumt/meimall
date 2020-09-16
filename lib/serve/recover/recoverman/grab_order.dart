@@ -36,33 +36,37 @@ class _GrabOrderState extends State<GrabOrder> {
                   child: Column(
                     children: [
                       Container(
+                        height: 30,
                         child: TabBar(
-                          tabs: [Text('最新订单'), Text('离我最近')],
+                          tabs: [
+                            Text('最新订单'),
+                            Text('离我最近'),
+                          ],
                           indicatorSize: TabBarIndicatorSize.label,
                           indicatorColor: Constants.mainColor,
                           labelStyle:
-                              TextStyle(color: Color(0xff020202), fontSize: 18),
+                          TextStyle(color: Color(0xff020202), fontSize: 18),
                           unselectedLabelStyle:
-                              TextStyle(color: Color(0xffB5B5B5), fontSize: 17),
+                          TextStyle(color: Color(0xffB5B5B5), fontSize: 17),
                         ),
                       ),
                       SizedBox(height: 10),
                       Container(
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height-96,
                         child: TabBarView(children: [
                           Container(
                             child: ListView.builder(
                               itemBuilder: listViewItem,
                               itemCount: 6,
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
                             ),
                           ),
                           Container(
                             child: ListView.builder(
                               itemBuilder: listViewItem,
                               itemCount: 6,
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
                             ),
                           )
                         ]),
@@ -86,14 +90,14 @@ class _GrabOrderState extends State<GrabOrder> {
       padding: EdgeInsets.only(top: 20, bottom: 10),
       decoration: BoxDecoration(
           border:
-              Border(bottom: BorderSide(color: Color(0xffF1F1F1), width: 1))),
+          Border(bottom: BorderSide(color: Color(0xffF1F1F1), width: 1))),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipOval(
             child: CachedNetworkImage(
               imageUrl:
-                  "http://www.meichengmall.com/wap/static/img/banner4.58e9237c.jpg",
+              "http://www.meichengmall.com/wap/static/img/banner4.58e9237c.jpg",
               fit: BoxFit.cover,
               width: 52,
               height: 52,
@@ -101,7 +105,10 @@ class _GrabOrderState extends State<GrabOrder> {
           ),
           SizedBox(width: 15),
           Container(
-            width: MediaQuery.of(context).size.width - 111,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width - 111,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

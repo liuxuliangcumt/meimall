@@ -91,7 +91,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
               child: Text('公开',
                   style: TextStyle(fontSize: 14, color: Color(0x99222222))),
               padding: EdgeInsets.only(left: 10),
-              left: Icon(IconData(0xe615, fontFamily: "ali"), size: 20),
+              left: Icon(const IconData(0xe615, fontFamily: "ali"), size: 20),
             ),
           )
         ],
@@ -141,7 +141,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe92e, fontFamily: "ali"),
+              const IconData(0xe92e, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -151,7 +151,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe688, fontFamily: "ali"),
+              const IconData(0xe688, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -159,7 +159,7 @@ class _PublicBehaviourState extends State<PublicBehaviour> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe629, fontFamily: "ali"),
+              const IconData(0xe629, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),

@@ -24,7 +24,7 @@ class _MyAnswerState extends State<MyAnswer> {
             onTap: () {},
           ),
           SizedBox(width: 10),
-          Icon(IconData(0xe622, fontFamily: "ali")),
+          Icon(const IconData(0xe622, fontFamily: "ali")),
           SizedBox(width: 15),
         ],
         leading: InkWell(
@@ -82,7 +82,7 @@ class _MyAnswerState extends State<MyAnswer> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe92e, fontFamily: "ali"),
+              const IconData(0xe92e, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -90,7 +90,7 @@ class _MyAnswerState extends State<MyAnswer> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe681, fontFamily: "ali"),
+              const IconData(0xe681, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -98,7 +98,7 @@ class _MyAnswerState extends State<MyAnswer> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe60a, fontFamily: "ali"),
+              const IconData(0xe60a, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -106,7 +106,7 @@ class _MyAnswerState extends State<MyAnswer> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe629, fontFamily: "ali"),
+              const IconData(0xe629, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
@@ -130,7 +130,7 @@ class _MyAnswerState extends State<MyAnswer> {
           InkWell(
             onTap: () {},
             child: Icon(
-              IconData(0xe618, fontFamily: "ali"),
+              const IconData(0xe618, fontFamily: "ali"),
               color: Colors.black,
               size: 20,
             ),
