@@ -156,7 +156,6 @@ class _HomeMineState extends State<HomeMine>
         }),
         funcRow("assets/images/me_pay_i.png", "支付", () {
           print("我的信息 支付");
-
           Navigator.push(context, MaterialPageRoute(builder: (c) => PayHome()));
         }),
         funcRow("assets/images/me_zone.png", "空间", () {
