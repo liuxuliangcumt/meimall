@@ -13,6 +13,7 @@ import 'package:meimall/serve/recover/recover_myorders.dart';
 import 'package:meimall/serve/recover/recover_ondoor.dart';
 import 'package:meimall/serve/recover/recover_orders.dart';
 import 'package:meimall/serve/recover/recover_scan.dart';
+import 'package:meimall/serve/recover/recoverman/apply_recycler.dart';
 import 'package:meimall/serve/recover/recoverman/recoverman_home.dart';
 
 //回收主页
@@ -104,10 +105,15 @@ class _RecoverHomeState extends State<RecoverHome> {
                       InkWell(
                         child: listItem("assets/images/rec_h_6.png", "加入美城回收"),
                         onTap: () {
+                          /*Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (c) => RecoverManHome()));*/
+
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (c) => RecoverManHome()));
+                                  builder: (c) => ApplyRecycler()));
                         },
                       ),
                       InkWell(
