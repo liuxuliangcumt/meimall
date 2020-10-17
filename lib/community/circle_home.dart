@@ -147,7 +147,7 @@ class _CircleHomeState extends State<CircleHome> {
             height: 170,
             width: 120,
             imageUrl:
-                "http://www.meichengmall.com/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
+                "http://www.meichengmall.com/wap/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
           ),
           Padding(
             child: Icon(Icons.videocam, color: Colors.white),
@@ -167,7 +167,7 @@ class _CircleHomeState extends State<CircleHome> {
               width: 45,
               height: 45,
               imageUrl:
-                  "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                  "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
             ),
             SizedBox(width: 15),
             Expanded(

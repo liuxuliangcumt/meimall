@@ -116,7 +116,7 @@ class _QuestionAndAnswerState extends State<QuestionAndAnswer> {
                                 //预览图
                                 fit: BoxFit.contain,
                                 image:
-                                    "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                                    "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                                 width: 20,
                                 height: 20)),
                         right: Text(
@@ -135,7 +135,7 @@ class _QuestionAndAnswerState extends State<QuestionAndAnswer> {
                     height: 63,
                     width: 90,
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                        "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
                   )
                 ]),
                 SizedBox(height: 15),

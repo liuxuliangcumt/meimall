@@ -161,7 +161,7 @@ class _ZoneGuestState extends State<ZoneGuest> {
                 //预览图
                 fit: BoxFit.contain,
                 image:
-                    "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                    "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                 width: 46.0,
                 height: 46.0),
           ),

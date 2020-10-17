@@ -112,7 +112,7 @@ class _PublicQuestionState extends State<PublicQuestion> {
         width: 200,
         height: 200,
         imageUrl:
-            "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+            "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
       ),
       InkWell(
         child: Icon(const IconData(0xe619, fontFamily: "ali"), size: 20),

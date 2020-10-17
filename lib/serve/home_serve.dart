@@ -252,7 +252,8 @@ class _HomeServeState extends State<HomeServe>
           ),
           CachedNetworkImage(
             imageUrl:
-                "http://www.meichengmall.com/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
+
+                "http://www.meichengmall.com/wap/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
             fit: BoxFit.cover,
             height: 200,
             errorWidget: (context, url, error) => new Icon(Icons.error),
@@ -263,7 +264,7 @@ class _HomeServeState extends State<HomeServe>
               children: <Widget>[
                 CachedNetworkImage(
                   imageUrl:
-                      "http://www.meichengmall.com/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
+                      "http://www.meichengmall.com/wap/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
                   fit: BoxFit.cover,
                   width: 120,
                   height: 120,
@@ -306,7 +307,7 @@ class _HomeServeState extends State<HomeServe>
               children: <Widget>[
                 CachedNetworkImage(
                   imageUrl:
-                      "http://www.meichengmall.com/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
+                      "http://www.meichengmall.com/wap/static/img/u=1617103996,2974598959&fm=26&gp=0.b779508a.jpg",
                   fit: BoxFit.cover,
                   width: 120,
                   height: 120,

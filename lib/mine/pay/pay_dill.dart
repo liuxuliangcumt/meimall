@@ -114,7 +114,7 @@ class _PayDillState extends State<PayDill> {
         leading: CachedNetworkImage(
           width: 40,
           height: 40,
-          imageUrl: "http://www.meichengmall.com/static/img/card.62a2c2b3.png",
+          imageUrl: "http://www.meichengmall.com/wap/static/img/card.62a2c2b3.png",
         ),
         trailing: Text(
           '-15.00',

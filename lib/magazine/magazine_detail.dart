@@ -66,7 +66,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
       children: [
         CachedNetworkImage(
           imageUrl:
-              "http://www.meichengmall.com/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
+              "http://www.meichengmall.com/wap/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
         ),
         Container(
           padding: EdgeInsets.all(22),
@@ -96,7 +96,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
                       height: 42,
                       width: 42,
                       imageUrl:
-                          "http://www.meichengmall.com/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
+                          "http://www.meichengmall.com/wap/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
                     ),
                   ),
                   SizedBox(width: 15),
@@ -172,7 +172,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
             width: 105,
             fit: BoxFit.cover,
             imageUrl:
-                "http://www.meichengmall.com/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
+                "http://www.meichengmall.com/wap/static/img/933b4079103743d094261ae6ca733fa4_th.8252b817.jpg",
           ),
           Expanded(
             child: Container(
@@ -244,7 +244,7 @@ class _MagazineDetailState extends State<MagazineDetail> {
                             //预览图
                             fit: BoxFit.contain,
                             image:
-                                "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                                "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                             width: 46.0,
                             height: 46.0),
                       ],

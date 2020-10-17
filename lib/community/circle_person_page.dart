@@ -28,7 +28,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
                   fit: BoxFit.fitWidth,
                   width: 120,
                   imageUrl:
-                      "http://www.meichengmall.com/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
+                      "http://www.meichengmall.com/wap/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
                 ),
               ),
               AppBar(
@@ -63,7 +63,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
                       width: 86,
                       height: 86,
                       imageUrl:
-                          "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                          "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                     ),
                   ),
                 ),
@@ -210,7 +210,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
                     //预览图
                     fit: BoxFit.contain,
                     image:
-                        "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                        "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                     width: 35,
                     height: 35)),
           ),
@@ -246,7 +246,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           ),
@@ -261,7 +261,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           ),
@@ -272,7 +272,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           ),
@@ -287,7 +287,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           ),
@@ -298,7 +298,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           ),
@@ -309,7 +309,7 @@ class _CirclePersonPageState extends State<CirclePersonPage> {
               child: CachedNetworkImage(
                 fit: BoxFit.scaleDown,
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
+                    "http://www.meichengmall.com/wap/static/img/u=116606011,2221389896&fm=26&gp=0.cb08c2e3.jpg",
               ),
             ),
           )

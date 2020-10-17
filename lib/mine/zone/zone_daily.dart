@@ -207,7 +207,7 @@ class _ZoneDailyState extends State<ZoneDaily> {
                   Visibility(
                     child: CachedNetworkImage(
                       imageUrl:
-                          "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                          "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                       width: 70,
                       height: 70,
                       errorWidget: (context, url, error) => new Icon(

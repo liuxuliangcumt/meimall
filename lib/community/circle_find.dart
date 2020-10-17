@@ -103,7 +103,7 @@ class _CircleFindState extends State<CircleFind> {
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
+                        "http://www.meichengmall.com/wap/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
                   ),
                   width: 42,
                   height: 42),

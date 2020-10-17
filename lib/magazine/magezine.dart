@@ -133,7 +133,8 @@ class _MagazineState extends State<Magazine> {
               height: 150,
               fit: BoxFit.fitWidth,
               imageUrl:
-                  "http://www.meichengmall.com/static/img/16B1B384664.ef65c3c4.jpg",
+                  // http://www.meichengmall.com/wap/static/img/b1.2547b2ab.png
+                  "http://www.meichengmall.com/wap/static/img/16B1B384664.ef65c3c4.jpg",
               placeholder: (context, url) => new CircularProgressIndicator(),
               errorWidget: (context, url, error) => new Icon(Icons.error),
             ),

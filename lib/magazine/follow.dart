@@ -133,7 +133,7 @@ class _FollowState extends State<Follow> {
                     //预览图
                     fit: BoxFit.contain,
                     image:
-                        "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                        "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                     width: 46.0,
                     height: 46.0),
               ),
@@ -215,7 +215,7 @@ class _DemoListViewState extends State<DemoListView> {
                 placeholder: (context, url) => new CircularProgressIndicator(),
                 errorWidget: (context, url, error) => new Icon(Icons.error),
                 imageUrl:
-                    "http://www.meichengmall.com/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
+                    "http://www.meichengmall.com/wap/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
               ),
             ),
             bottomOperation(),
@@ -239,7 +239,7 @@ class _DemoListViewState extends State<DemoListView> {
                 children: <Widget>[
                   CachedNetworkImage(
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
+                        "http://www.meichengmall.com/wap/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
                     fit: BoxFit.cover,
                     width: 120,
                     height: 120,
@@ -299,7 +299,7 @@ class _DemoListViewState extends State<DemoListView> {
                 children: <Widget>[
                   CachedNetworkImage(
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
+                        "http://www.meichengmall.com/wap/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
                     fit: BoxFit.cover,
                     width: 120,
                     height: 120,
@@ -375,7 +375,7 @@ class _DemoListViewState extends State<DemoListView> {
                 Expanded(
                   child: CachedNetworkImage(
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
+                        "http://www.meichengmall.com/wap/static/img/ab72f009538c8fa0243d5c6c30226c6eef6eeeb6f4c43-fh1Ne4_fw658.d86589fd.png",
                     fit: BoxFit.cover,
                     width: 120,
                     height: 120,
@@ -386,7 +386,7 @@ class _DemoListViewState extends State<DemoListView> {
                 Expanded(
                   child: CachedNetworkImage(
                     imageUrl:
-                        "http://www.meichengmall.com/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
+                        "http://www.meichengmall.com/wap/static/img/65aa3d98affd202bf958ed1fc0f3361632544f4dc574-OOkVsF_fw658.f234a506.jpg",
                     fit: BoxFit.cover,
                     width: 120,
                     height: 120,
@@ -416,7 +416,7 @@ class _DemoListViewState extends State<DemoListView> {
                 //预览图
                 fit: BoxFit.contain,
                 image:
-                    "http://www.meichengmall.com/static/img/user.5392cec7.png",
+                    "http://www.meichengmall.com/wap/static/img/user.5392cec7.png",
                 width: 46.0,
                 height: 46.0),
           ),
